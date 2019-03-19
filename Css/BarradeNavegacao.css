@@ -1,0 +1,26 @@
+.navBar{
+    border-bottom: 1px solid #d3d3d3;
+}
+.imgNavBar{
+    width:15%;
+    height:15%;
+    margin-top:0.5%;
+    margin-bottom:0.5%;
+    margin-left:6%;
+}
+.navigationBar{
+    float:right;
+    margin-top:1%;
+    margin-right: 2%;
+}
+.aLink{
+    font-size: 20px;
+    color:black;
+}
+.aLink:hover{
+    transition:1s;
+    -webkit-transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    color:rgba(254,103,0,0.6)
+}
