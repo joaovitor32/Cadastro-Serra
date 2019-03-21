@@ -15,13 +15,11 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="floatBox">
-                    <ul>
-                        <li class="aLiMembro"><a href="#">Membro</a></li>
-                        <li class="aLiMembro"><a href="#">Projetos</a></li>
-                        <li class="aLiMembro"><a href="#">Ações</a></li>
-                        <li class="aLiMembro"><a href="#">Eventos</a></li>
-                        <li class="aLiMembro"><a href="#">Cursos/Treinamento</a></li>
-                    </ul>
+                    <a href="#">Membro</a>
+                    <a href="#">Projetos</a>
+                    <a href="#">Ações</a>
+                    <a href="#">Eventos</a>
+                    <a href="#">Cursos/Treinamento</a>
                 </div>
             </div>
         </div>

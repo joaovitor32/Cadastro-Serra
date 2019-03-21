@@ -1,20 +1,24 @@
 /* border: 1.5px solid rgba(254,103,0,0.6);*/
-li>a:link {
+.floatBox a:link {
     text-decoration:none;
     }
-li>a:visited {
+.floatBox a:visited {
     text-decoration:none;
-}
-ul{
-    list-style-type:none;
 }
 .floatBox{
     border: 1.5px solid rgba(254,103,0,0.6);
     margin-top:20%;
-    border-radius: 15px;
+    border-radius: 5px;
+    width:200px;
+    height: 252px;
 }
-.aLiMembro{
-    padding:10px;
-    margin-left:15%;
-    margin-top:2%;
+.floatBox a{
+    color:rgba(254,103,0,0.6);
+    display:block;
+    padding: 13px;
+    left:10%;
+}
+.floatBox a:hover{
+    background:rgba(254,103,0,0.6);
+    color:white
 }
