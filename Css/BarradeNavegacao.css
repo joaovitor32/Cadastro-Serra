@@ -1,3 +1,4 @@
+/*----------Barra de navegação--------------*/
 .navBar{
     border-bottom: 1px solid #d3d3d3;
 }
@@ -23,4 +24,12 @@
     -o-transition:1s;
     -moz-transition:1s;
     color:rgba(254,103,0,0.6)
+}
+@media screen and (max-width:700px){
+    .aLink{
+        font-size:12px;
+    }
+    .navigationBar{
+        margin-top:-1%;
+    }
 }

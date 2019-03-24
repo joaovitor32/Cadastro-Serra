@@ -11,7 +11,7 @@
     <?php
         require("BarradeNavegacao.php");
     ?>
-    <div class="container">
+    <div class="container containerBox">
         <div class="row">
             <div class="col-md-3">
                 <div class="floatBox">
