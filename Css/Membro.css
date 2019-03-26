@@ -1,4 +1,13 @@
+body{
+    overflow: hidden;
+}
 /* border: 1.5px solid rgba(254,103,0,0.6);*/
+/*-----------Imagem-----------*/
+.imgBoxTopo{
+    width:90%;
+    height: 16%;
+    margin-left:4%;
+}
 /*-----------Menu lateral-----------*/
 .floatBox a:link {
     text-decoration:none;
@@ -8,16 +17,21 @@
 }
 .floatBox{
     border: 1.5px solid rgba(254,103,0,0.6);
-    margin-top:20%;
-    border-radius: 5px;
-    width:200px;
-    height: 252px;
+    width:250px;
+    height:652px;
+    z-index:1;
+    top:0;
+    left:0;
+    padding-top:20px;
+   
 }
 .floatBox a{
     color:rgba(254,103,0,0.6);
     display:block;
     padding: 13px;
     left:10%;
+    margin-top:18%;
+    font-size:20px;
 }
 .floatBox a:hover{
     background:rgba(254,103,0,0.6);
