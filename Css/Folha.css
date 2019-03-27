@@ -1,0 +1,17 @@
+/*--------Section 1---------*/
+.boxFormulario{
+    background-color:gainsboro;
+    overflow-x:auto;
+}
+.imgMembro{
+    margin-top:4%;
+    margin-left:2%;
+    margin-bottom:4%;
+    padding:5px;
+    width:200px;
+    height: 250px;
+}
+.infoText{
+    margin-left:10%;
+    margin-top:3%;
+}

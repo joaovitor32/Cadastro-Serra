@@ -1,0 +1,27 @@
+#div1{
+    width: 1280px;
+    height: 720px;
+}
+
+#linha1{
+    width: 100%;
+}
+
+#coluna1{
+    float: left;
+    height: 100%;
+    width: auto;
+    background-color: aquamarine;
+}
+
+#coluna2{
+    float: left;
+    width: 42%;
+    background-color: chartreuse;
+}
+
+#coluna3{
+    float: left;
+    width: 43%;
+    background-color: brown;
+}
