@@ -1,17 +1,36 @@
-/*--------Section 1---------*/
-.boxFormulario{
-    background-color:gainsboro;
-    overflow-x:auto;
-}
-.imgMembro{
-    margin-top:4%;
+/*------------Aspectos Gerais----------------*/
+.viewForm{
+    width: 75%;
+    float:left;
     margin-left:2%;
-    margin-bottom:4%;
+    margin-top:6%;
+}
+.boxFormulario{
+    background-color:rgba(220,220,220,0.45);
+    overflow-y:scroll;
+}
+/*--------Section 1---------*/
+.imgMembro{
+    margin-top:2%;
+    margin-left:6%;
+    margin-bottom:2%;
     padding:5px;
     width:200px;
     height: 250px;
+    float:left;
 }
-.infoText{
-    margin-left:10%;
-    margin-top:3%;
+.box1{
+    width: 35%;
+    float:left;
+    margin-top:2%;
+    margin-left:3%;
 }
+.box2 {
+    width: 35%;
+    float:right;
+    margin-top:2%;
+}
+.box2>div,.box1>div{
+    padding:9px;
+}
+/*--------Section 2---------*/
