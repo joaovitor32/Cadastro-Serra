@@ -1,13 +1,16 @@
+body{
+    overflow-y:scroll;
+}
 /*------------Aspectos Gerais----------------*/
 .viewForm{
     width: 75%;
     float:left;
     margin-left:2%;
-    margin-top:6%;
+    margin-top:1%;
+    display:inline-flex;
 }
 .boxFormulario{
-    background-color:rgba(220,220,220,0.45);
-    overflow-y:scroll;
+    background-color:rgba(220,220,220,0.4);
 }
 /*--------Section 1---------*/
 .imgMembro{
@@ -18,16 +21,19 @@
     width:200px;
     height: 250px;
     float:left;
+    display: block;
 }
 .box1{
     width: 35%;
     float:left;
+    display: block;
     margin-top:2%;
     margin-left:3%;
 }
 .box2 {
     width: 35%;
     float:right;
+    display: block;
     margin-top:2%;
 }
 .box2>div,.box1>div{

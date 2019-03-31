@@ -21,12 +21,6 @@
             <a href="#">Eventos</a>
             <a href="#">Treinamento</a>
         </div>
-        <div class="displayBox">
-            <form action="Busca.php" methof="POST">
-                <label class="textInput">Nome:<label>
-                <input class="inputNome" type="text" name="Nome">
-            </form>
-        </div>
     </section>
     <section class="viewForm">
         <div class="container boxFormulario">
@@ -41,13 +35,15 @@
                             <div><strong>Curso:</strong><span> Engenharia da Computação</span></div>
                             <div><strong>Ano de entrada:</strong><span> 01/01/1997</span></div>
                             <div><strong>Cargo:</strong><span> Gerente</span></div>
-                            <div><strong>RG:</strong><span> 213131322123</span></div>
+                            <div><strong>Telefone:</strong><span> 213131322123</span></div>
                             <div><strong>CPF:</strong><span> 17979807774</span></div>
                         </div>
                         <div class="box2">
                             <div><strong>Rua:</strong><span> José Aristides Pereira</span></div>
                             <div><strong>Número:</strong><span> 13</span></div>
-                            <div><strong>Complemento:</strong><span> Lote</span></div>
+                            <div><strong>Bairro:</strong><span> Solares</span></div>
+                            <div><strong>Email:</strong><span> Solares</span></div>
+                            <div><strong>Data Aniversário:</strong><span> 13/03/1997</span></div>
                             <div><strong>Status na empresa:</strong><span> Ativo</span></div>
                         </div>
                     </div>
