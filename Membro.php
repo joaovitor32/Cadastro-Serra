@@ -41,7 +41,7 @@
                                 echo "<div class='box1'>";
                                 echo "<div><strong>Nome:</strong><span> ".utf8_encode($Row->Nome)."</span></div>";
                                 echo "<div><strong>Curso:</strong><span> ".utf8_encode($Row->Curso)."</span></div>";
-                                echo "<div><strong>Ano de entrada:</strong><span> ".$Row->AnoDeEntrada."</span></div>";
+                                echo "<div><strong>Ano de entrada:</strong><span> ".date("d-m-Y",strtotime($Row->AnoDeEntrada))."</span></div>";
                                 echo "<div><strong>Cargo:</strong><span> ".utf8_encode($Row->Cargo)."</span></div>";
                                 echo "<div><strong>Telefone:</strong><span> ".$Row->Telefone."</span></div>";
                                 echo "<div><strong>CPF:</strong><span> ".$Row->CPF."</span></div>";
@@ -50,7 +50,7 @@
                                 echo "<div><strong>Rua:</strong><span> ".utf8_encode($Row->Rua)."</span></div>";
                                 echo "<div><strong>Número:</strong><span> ".$Row->Numero."</span></div>";
                                 echo "<div><strong>Email:</strong><span> ".utf8_encode($Row->Email)."</span></div>";
-                                echo "<div><strong>Data de nascimento:</strong><span> ".$Row->DataNascimento."</span></div>";
+                                echo "<div><strong>Data de nascimento:</strong><span> ".date("m-d-Y",strtotime($Row->DataNascimento))."</span></div>";
                                 echo "<div><strong>Status:</strong><span> ".$Row->Status."</span></div>";
                                 echo "</div>";
                             }
