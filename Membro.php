@@ -2,7 +2,7 @@
 <html> 
     <head>
         <title>Cadastro</title>
-        <link rel="stylesheet" type="text/css" href="Css/Membro.css">
+        <link rel="stylesheet" type="text/css" href="Css/MenuLateral.css">
         <link rel="stylesheet" type="text/css" href="Css/Folha.css">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -11,6 +11,9 @@
     </head>
     <!---Barra lateral-->
 <body>
+    <?php
+        include("Conexao.php");
+    ?>
     <section>
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
         <div class="floatBox">
@@ -27,6 +30,32 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section1">
+                        <?php
+                            $NomeRedirect=$_POST['Nome'];
+                            $SQLSelect="SELECT * FROM Membro WHERE Nome='$NomeRedirect'";
+                            $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+                            while($Row=mysqli_fetch_object($ConsultaMembro)){
+                                echo "<div>";
+                                echo "<img class='imgMembro' src='Php/Foto/PegaImagem.php?Id=$Row->CodMembro'>";
+                                echo "</div>";
+                                echo "<div class='box1'>";
+                                echo "<div><strong>Nome:</strong><span> ".utf8_encode($Row->Nome)."</span></div>";
+                                echo "<div><strong>Curso:</strong><span> ".utf8_encode($Row->Curso)."</span></div>";
+                                echo "<div><strong>Ano de entrada:</strong><span> ".$Row->AnoDeEntrada."</span></div>";
+                                echo "<div><strong>Cargo:</strong><span> ".utf8_encode($Row->Cargo)."</span></div>";
+                                echo "<div><strong>Telefone:</strong><span> ".$Row->Telefone."</span></div>";
+                                echo "<div><strong>CPF:</strong><span> ".$Row->CPF."</span></div>";
+                                echo "</div>";
+                                echo "<div class='box2'>";
+                                echo "<div><strong>Rua:</strong><span> ".utf8_encode($Row->Rua)."</span></div>";
+                                echo "<div><strong>Número:</strong><span> ".$Row->Numero."</span></div>";
+                                echo "<div><strong>Email:</strong><span> ".utf8_encode($Row->Email)."</span></div>";
+                                echo "<div><strong>Data de nascimento:</strong><span> ".$Row->DataNascimento."</span></div>";
+                                echo "<div><strong>Status:</strong><span> ".$Row->Status."</span></div>";
+                                echo "</div>";
+                            }
+                        ?>
+                        <!---
                         <div>
                             <img class="imgMembro" src="Img/download.jpeg">
                         </div>
@@ -46,6 +75,7 @@
                             <div><strong>Data Aniversário:</strong><span> 13/03/1997</span></div>
                             <div><strong>Status na empresa:</strong><span> Ativo</span></div>
                         </div>
+                        ----->
                     </div>
                 </div>    
             <div>
