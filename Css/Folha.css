@@ -20,6 +20,7 @@ body{
     height: 250px;
     float:left;
     display: block;
+    pointer-events: none;
 }
 .box1{
     width: 35%;

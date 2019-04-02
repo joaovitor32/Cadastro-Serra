@@ -36,7 +36,7 @@
                             $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
                             while($Row=mysqli_fetch_object($ConsultaMembro)){
                                 echo "<div>";
-                                echo "<img class='imgMembro' src='Php/Foto/PegaImagem.php?Id=$Row->CodMembro'>";
+                                echo "<img oncontextmenu='return false' class='imgMembro' src='Php/Foto/PegaImagem.php?Id=$Row->CodMembro'>";
                                 echo "</div>";
                                 echo "<div class='box1'>";
                                 echo "<div><strong>Nome:</strong><span> ".utf8_encode($Row->Nome)."</span></div>";
@@ -50,6 +50,7 @@
                                 echo "<div><strong>Rua:</strong><span> ".utf8_encode($Row->Rua)."</span></div>";
                                 echo "<div><strong>Número:</strong><span> ".$Row->Numero."</span></div>";
                                 echo "<div><strong>Email:</strong><span> ".utf8_encode($Row->Email)."</span></div>";
+                                echo "<div><strong>Bairro:</strong><span> ".utf8_encode($Row->Bairro)."</span></div>";
                                 echo "<div><strong>Data de nascimento:</strong><span> ".date("m-d-Y",strtotime($Row->DataNascimento))."</span></div>";
                                 echo "<div><strong>Status:</strong><span> ".$Row->Status."</span></div>";
                                 echo "</div>";
