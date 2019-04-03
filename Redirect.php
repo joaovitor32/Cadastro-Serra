@@ -12,7 +12,7 @@
     <!---Barra lateral-->
 <body>
     <div>
-        <form method="post" action="Membro.php">
+        <form method="post" action="Folha.php">
             Nome:<input type="text" name="Nome">
             <input type="submit" value="ok"> 
         </form>
