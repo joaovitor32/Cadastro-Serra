@@ -19,6 +19,7 @@
             $SQLSelect="SELECT * FROM Membro WHERE Nome='$NomeRed'";
             $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
             while($Row=mysqli_fetch_object($ConsultaMembro)){
+                $CodMemro=$Row->CodMembro;
                 $Nome=$Row->Nome;
                 $Curso=$Row->Curso;
                 $AnoEntrada=$Row->AnoDeEntrada;
@@ -33,12 +34,12 @@
                 $Status=$Row->Status;
                 
                 echo "<div>";
-                echo "<img oncontextmenu='return false' class='imgMembro' src='Php/Foto/PegaImagem.php?Id=$Row->CodMembro'>";
+                echo "<img oncontextmenu='return false' class='imgMembro' src='Php/Foto/PegaImagem.php?Id=$CodMembro'>";
                 echo "</div>";
                 echo "<div class='box1'>";
                 echo "<div><strong>Nome:</strong><span> ".utf8_encode($Nome)."</span></div>";
                 echo "<div><strong>Curso:</strong><span> ".utf8_encode($Curso)."</span></div>";
-                echo "<div><strong>Ano de entrada:</strong><span> ".date("d-m-Y",strtotime($Row->AnoDeEntrada))."</span></div>";
+                echo "<div><strong>Ano de entrada:</strong><span> ".date("d-m-Y",strtotime($AnoDeEntrada))."</span></div>";
                 echo "<div><strong>Cargo:</strong><span> ".utf8_encode($Cargo)."</span></div>";
                 echo "<div><strong>Telefone:</strong><span> ".$Telefone."</span></div>";
                 echo "<div><strong>CPF:</strong><span> ".$CPF."</span></div>";
