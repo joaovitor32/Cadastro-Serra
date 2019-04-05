@@ -13,7 +13,7 @@
 <body>
     <?php
         $NomeRed=$_POST['Nome'];
-        include("Membro.class.php");
+        include("Php/Sistema/Membro.class.php");
     ?>
     <section>
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
@@ -35,34 +35,16 @@
                             $Membro=new Membro();
                             $Membro->SelectMembro($NomeRed);
                         ?>
-                        <!---
-                        <div>
-                            <img class="imgMembro" src="Img/download.jpeg">
-                        </div>
-                        <div class="box1">
-                            <div><strong>Nome:</strong><span> João Vitor Muniz Lopes</span></div>
-                            <div><strong>Curso:</strong><span> Engenharia da Computação</span></div>
-                            <div><strong>Ano de entrada:</strong><span> 01/01/1997</span></div>
-                            <div><strong>Cargo:</strong><span> Gerente</span></div>
-                            <div><strong>Telefone:</strong><span> 213131322123</span></div>
-                            <div><strong>CPF:</strong><span> 17979807774</span></div>
-                        </div>
-                        <div class="box2">
-                            <div><strong>Rua:</strong><span> José Aristides Pereira</span></div>
-                            <div><strong>Número:</strong><span> 13</span></div>
-                            <div><strong>Bairro:</strong><span> Solares</span></div>
-                            <div><strong>Email:</strong><span> Solares</span></div>
-                            <div><strong>Data Aniversário:</strong><span> 13/03/1997</span></div>
-                            <div><strong>Status na empresa:</strong><span> Ativo</span></div>
-                        </div>
-                        ----->
                     </div>
                 </div>    
             <div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="section2">
-                        
+                        <?php
+                            $ProjetoMembro = new ProjetosMembro();
+                            $ProjetoMembro->SelectMembroProjeto($NomeRed);
+                        ?>
                     </div>
                 </div>
             </div>
