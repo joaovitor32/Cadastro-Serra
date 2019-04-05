@@ -13,7 +13,10 @@
 <body>
     <?php
         $NomeRed=$_POST['Nome'];
+        require('Php/Sistema/Conexao.class.php');
         include("Php/Sistema/Membro.class.php");
+        include("Php/Sistema/Projeto.class.php");
+        include("Php/Sistema/Acao.class.php");
     ?>
     <section>
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
@@ -44,6 +47,16 @@
                         <?php
                             $ProjetoMembro = new ProjetosMembro();
                             $ProjetoMembro->SelectMembroProjeto($NomeRed);
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section3">
+                        <?php
+                            $AcaoMembro = new AcaoMembro();
+                            $AcaoMembro->SelectAcaoMembro($NomeRed);
                         ?>
                     </div>
                 </div>
