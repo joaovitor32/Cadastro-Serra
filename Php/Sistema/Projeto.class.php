@@ -52,7 +52,7 @@
                 echo "<td> $DataFimProjeto</td>";
                 echo "<td> $Descricao</td>";
                 echo "</tr>";
-                echo "<tr>";
+
             }
             echo "</table>";
         }

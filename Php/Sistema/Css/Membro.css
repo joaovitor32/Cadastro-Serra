@@ -1,6 +1,6 @@
 /*-----------Aspectos Gerais-----------*/
 body{
-    overflow: hidden;
+    overflow-y:scroll;
 }
 input{
     outline:none;

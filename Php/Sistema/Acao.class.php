@@ -38,14 +38,13 @@
 
                 echo "<tr>";
                 echo "<td> $i</td>";
-                echo "<td> $Nome</td>";
-                echo "<td> $Data</td>";
-                echo "<td> $DataIni</td>";
-                echo "<td> $DataFim</td>";
-                echo "<td> $Atividades</td>";
-                echo "<td> $Descricao</td>";
+                echo "<td>".utf8_encode($Nome)."</td>";
+                echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
+                echo "<td>".date("d-m-Y",strtotime($DataIni))."</td>";
+                echo "<td>".date("d-m-Y",strtotime($DataFim))."</td>";
+                echo "<td>".utf8_encode($Atividades)."</td>";
+                echo "<td>".utf8_encode($Descricao)."</td>";
                 echo "</tr>";
-                echo "<tr>";
 
             }
             echo "</table>";
