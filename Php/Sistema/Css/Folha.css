@@ -6,9 +6,10 @@ body{
     width: 75%;
     margin-left:23%;
     margin-top:1%;
+    text-overflow: ellipsis;
 }
 .boxFormulario{
-    background-color:rgba(220,220,220,0.4);
+    background-color:rgba(220,220,220,0.25);
 }
 /*--------Section 1---------*/
 .imgMembro{
@@ -38,8 +39,27 @@ body{
 .box2>div,.box1>div{
     padding:9px;
 }
-/*--------Section 2---------*/
-.Tabela{
-    margin-left:6%;
-    margin-top:2%;
+@media screen and (max-width:700px){
+    .viewForm{
+        margin-left:1%;
+        width:98%;
+        margin-top:4%;
+    }
+    .imgMembro{
+        margin-left:20%;
+        float:none;
+    }
+    .box1{
+        margin-left:20%;
+        width:100%;
+        float:none;
+    }
+    .box2{
+        float: none;
+        width:100%;
+        margin-left:20%;
+    }
+   
+    
 }
+/*--------Section 2---------*/

@@ -14,6 +14,7 @@
             $SQLSelectProj="SELECT * FROM ProjetoMembro AS Pm INNER JOIN Membro AS M ON Pm.CodMembro =M.CodMembro  INNER JOIN Projeto Po ON Po.CodProjeto=Pm.CodProjeto WHERE M.Nome='$NomeRed'";
             $ConsultaMembroProjeto=mysqli_query($BD->ConectarBanco(),$SQLSelectProj);
            
+            echo "<div class='table-responsive-sm'>";
             echo "<table class='table Tabela'>";
             echo "<thead>";
             echo "<tr>";
@@ -55,6 +56,7 @@
 
             }
             echo "</table>";
+            echo "</div>";
         }
     }
 ?>

@@ -53,10 +53,10 @@ input{
         display:none;
     }
     .imgBoxTopoCel{
-        display: inline;
-        width:60%;
-        height:75%;
-        margin-left:21%;
+        display: inline-block;
+        margin-left:22%;
+        margin-bottom:2%;
+        margin-top:4%;
     }
 }
 /*-----------Formulário-----------*/

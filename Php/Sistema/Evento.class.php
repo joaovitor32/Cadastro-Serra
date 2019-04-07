@@ -22,8 +22,8 @@
             $i=0;
             while($Evento=mysqli_fetch_array($ConsultaEventoMembro)){
                 $i++;
-                $Nome=$Evento['Nome'];
-                $Data=$Eveno['Data'];
+                $Nome=$Evento['NomeEvento'];
+                $Data=$Evento['Data'];
                 $Descricao=$Evento['Descricao'];
 
                 echo "<tr>";
