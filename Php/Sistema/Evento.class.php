@@ -9,7 +9,7 @@
             $SQLSelectEvento = "SELECT * FROM Evento AS Ev INNER JOIN MembroEvento AS Me ON Me.CodEvento=Ev.CodEvento INNER JOIN Membro M ON Me.CodMembro=M.CodMembro WHERE M.Nome='$NomeRed'";
             $ConsultaEventoMembro=mysqli_query($BD->ConectarBanco(),$SQLSelectEvento);
 
-            echo "<table class='table Tabela'>";
+            echo "<table class='table table-responsive'>";
             echo "<thead>";
             echo "<tr>";
             echo "<th scope='col'>Eventos:</th>";
@@ -33,6 +33,7 @@
                 echo "<td>".utf8_encode($Descricao)."</td>";
                 echo "</tr>";
             }
+            echo "</tbody>";
             echo "</table>";
         }
     }

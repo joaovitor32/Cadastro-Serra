@@ -12,7 +12,7 @@
             $SQLSelectAcao="SELECT * FROM AcaoMembro Am INNER JOIN Membro M ON M.CodMembro = Am.CodMembro INNER JOIN Acao A ON A.CodAcao=Am.CodAcao WHERE M.Nome='$NomeRed'";
             $ConsultaAcaoMembro=mysqli_query($BD->ConectarBanco(),$SQLSelectAcao);
         
-            echo "<table class='table Tabela'>";
+            echo "<table class='table table-responsive'>";
             echo "<thead>";
             echo "<tr>";
             echo "<th scope='col'>Ações:</th>";
@@ -47,6 +47,7 @@
                 echo "</tr>";
 
             }
+            echo "</tbody>";
             echo "</table>";
         }
     }

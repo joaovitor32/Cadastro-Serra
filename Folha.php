@@ -25,18 +25,18 @@
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
         <div class="floatBox">
             <img class="imgBoxTopo" src="Img/logoserra.png">
-            <a href="#">Membro</a>
-            <a href="#">Projetos</a>
-            <a href="#">Ações</a>
-            <a href="#">Eventos</a>
-            <a href="#">Treinamento</a>
+            <a id="Topo0" class="Topo" href="#">Membro</a>
+            <a id="Topo1" class="Topo" href="#">Projetos</a>
+            <a id="Topo2" class="Topo" href="#">Ações</a>
+            <a id="Topo3" class="Topo" href="#">Eventos</a>
+            <a id="Topo4" class="Topo" href="#">Treinamento</a>
         </div>
     </section>
     <section class="viewForm">
         <div class="container boxFormulario">
-            <div class="row">
+            <div class="row section">
                 <div class="col-md-12">
-                    <div class="section1">
+                    <div>
                         <?php
                             $Membro=new Membro();
                             $Membro->SelectMembro($NomeRed);
@@ -44,9 +44,9 @@
                     </div>
                 </div>    
             <div>
-            <div class="row">
+            <div class="row section">
                 <div class="col-md-12">
-                    <div class="section2">
+                    <div  >
                         <?php
                             $ProjetoMembro = new ProjetosMembro();
                             $ProjetoMembro->SelectMembroProjeto($NomeRed);
@@ -54,9 +54,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row section">
                 <div class="col-md-12">
-                    <div class="section3">
+                    <div>
                         <?php
                             $AcaoMembro = new AcaoMembro();
                             $AcaoMembro->SelectAcaoMembro($NomeRed);
@@ -64,9 +64,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row section">
                 <div class="col-md-12">
-                    <div class="section4">
+                    <div>
                         <?php
                             $EventoMembro = new EventoMembro();
                             $EventoMembro->SelectEventoMembro($NomeRed);
@@ -74,7 +74,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btnSair">Voltar</button>
+                </div>
+            </div>
         </div>
     </section>
-    <script src="Membro.js"></script>
+    <script src="Javascript/MenuLateral.js"></script>
 </body>
+</html>

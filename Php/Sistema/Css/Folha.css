@@ -1,12 +1,19 @@
 body{
     overflow-y:scroll;
 }
+/*
+Retira a barra lateral na responsividade
+@media screen and (max-width:760px){
+    body{
+        overflow-y:hidden;
+    }
+}*/
 /*------------Aspectos Gerais----------------*/
 .viewForm{
     width: 75%;
     margin-left:23%;
-    margin-top:1%;
-    text-overflow: ellipsis;
+    margin-top:2%;
+    height: 100%;
 }
 .boxFormulario{
     background-color:rgba(220,220,220,0.25);
@@ -50,16 +57,44 @@ body{
         float:none;
     }
     .box1{
-        margin-left:20%;
+        margin-left:14%;
         width:100%;
         float:none;
     }
     .box2{
         float: none;
         width:100%;
-        margin-left:20%;
+        margin-left:14%;
     }
    
     
 }
-/*--------Section 2---------*/
+/*-------Bottom----------*/
+.btnSair{
+    margin-top:10%;
+    margin-left:40%;
+    margin-bottom:12%;
+    height:60px;
+    width:140px;
+    background-color:rgb(254,103,0);
+    color:white;
+    border-radius:8px;  
+    border:none;
+}
+.btnSair:hover{
+    background-color:rgba(220,220,220,0.25);
+    color:rgb(254,103,0);
+    border:1px solid rgb(254,103,0);    
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+}
+.btnSair:focus{
+   outline:none;
+}
+@media screen and (max-width:760px){
+    .btnSair{
+        margin-left:16%;
+    }
+}
