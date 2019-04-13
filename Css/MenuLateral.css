@@ -24,11 +24,6 @@ body{
 input{
     outline:none;
 }
-@media screen and (max-width:760px){
-    body{
-        overflow-y:hidden;
-    }
-}
 /* border: 1.5px solid rgba(254,103,0,0.6);*/
 /*-----------Imagem-----------*/
 .imgBoxTopoCel{
@@ -73,17 +68,6 @@ input{
     color:white;
     
 }
-@media screen and (max-width:700px){
-    .floatBox{
-        display:none;
-    }
-    .imgBoxTopoCel{
-        display: inline-block;
-        margin-left:22%;
-        margin-bottom:2%;
-        margin-top:4%;
-    }
-}
 .Topo{
     color:rgba(254,103,0,0.9);
     display:block;
@@ -100,6 +84,22 @@ input{
 .TopoEffect{
     background:rgba(254,103,0,0.9);
     color:white;
+}
+@media screen and (max-width:760px){
+    body{
+        overflow-y:hidden;
+    }
+}
+@media screen and (max-width:700px){
+    .floatBox{
+        display:none;
+    }
+    .imgBoxTopoCel{
+        display: inline-block;
+        margin-left:22%;
+        margin-bottom:2%;
+        margin-top:4%;
+    }
 }
 @media screen and (max-width:700px){
     .floatBox{

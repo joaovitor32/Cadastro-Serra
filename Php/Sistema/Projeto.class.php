@@ -29,33 +29,43 @@
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-            $i=0;
-            while($Projeto=mysqli_fetch_array($ConsultaMembroProjeto)){
-                $i++;
-                $DataIniMembro =$Projeto['DataIniMembro'];
-                $DataFimMembro=$Projeto['DataFimMembro'];
-                $Cargo=$Projeto['Cargo'];
-                $DataIniProjeto=$Projeto['DataIni'];
-                $DataFimProjeto=$Projeto['DataFim'];
-                $Nome=$Projeto['Nome'];
-                $Preco=$Projeto['Preco'];
-                $Descricao=$Projeto['Descricao'];
-                
-                echo "<tr>";
-                echo "<td> $i</td>";
-                echo "<td> $Nome</td>";
-                echo "<td> $Cargo</td>";
-                echo "<td> $Preco</td>";
-                echo "<td> $DataIniMembro</td>";
-                echo "<td> $DataFimMembro</td>";
-                echo "<td> $DataIniProjeto</td>";
-                echo "<td> $DataFimProjeto</td>";
-                echo "<td> $Descricao</td>";
-                echo "</tr>";
+            if(mysqli_num_rows($ConsultaMembroProjeto)){
+                $i=0;
+                while($Projeto=mysqli_fetch_array($ConsultaMembroProjeto)){
+                    $i++;
+                    $DataIniMembro =$Projeto['DataIniMembro'];
+                    $DataFimMembro=$Projeto['DataFimMembro'];
+                    $Cargo=$Projeto['Cargo'];
+                    $DataIniProjeto=$Projeto['DataIni'];
+                    $DataFimProjeto=$Projeto['DataFim'];
+                    $Nome=$Projeto['Nome'];
+                    $Preco=$Projeto['Preco'];
+                    $Descricao=$Projeto['Descricao'];
+                    
+                    echo "<tr>";
+                    echo "<td> $i</td>";
+                    echo "<td> $Nome</td>";
+                    echo "<td> $Cargo</td>";
+                    echo "<td> $Preco</td>";
+                    echo "<td> $DataIniMembro</td>";
+                    echo "<td> $DataFimMembro</td>";
+                    echo "<td> $DataIniProjeto</td>";
+                    echo "<td> $DataFimProjeto</td>";
+                    echo "<td> $Descricao</td>";
+                    echo "</tr>";
 
+                }
+                echo "</tbody>";
+                echo "</table>";
+            }else{
+
+                echo "<tr>";
+                echo "<td>Não há nenhum dado disponível</td>";
+                echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
+            
             }
-            echo "</tbody>";
-            echo "</table>";
         }
     }
 ?>

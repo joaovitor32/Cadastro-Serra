@@ -95,6 +95,6 @@ Retira a barra lateral na responsividade
 }
 @media screen and (max-width:760px){
     .btnSair{
-        margin-left:16%;
+        margin-left:18%;
     }
 }

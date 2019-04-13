@@ -20,6 +20,7 @@
         include("Php/Sistema/Acao.class.php");
         include("Php/Sistema/Projeto.class.php");
         include("Php/Sistema/Evento.class.php");
+        include("Php/Sistema/Treinamento.class.php");
     ?>
     <section>
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
@@ -70,6 +71,16 @@
                         <?php
                             $EventoMembro = new EventoMembro();
                             $EventoMembro->SelectEventoMembro($NomeRed);
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row section">
+                <div class="col-md-12">
+                    <div>
+                        <?php
+                            $TreinamentoMembro = new TreinamentoMembro();
+                            $TreinamentoMembro->SelectTreinamentoMembro($NomeRed);
                         ?>
                     </div>
                 </div>

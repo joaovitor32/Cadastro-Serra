@@ -19,22 +19,33 @@
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-            $i=0;
-            while($Evento=mysqli_fetch_array($ConsultaEventoMembro)){
-                $i++;
-                $Nome=$Evento['NomeEvento'];
-                $Data=$Evento['Data'];
-                $Descricao=$Evento['Descricao'];
 
+            if(mysqli_num_rows($ConsultaEventoMembro)){
+                $i=0;
+                while($Evento=mysqli_fetch_array($ConsultaEventoMembro)){
+                    $i++;
+                    $Nome=$Evento['NomeEvento'];
+                    $Data=$Evento['Data'];
+                    $Descricao=$Evento['Descricao'];
+    
+                    echo "<tr>";
+                    echo "<td> $i</td>";
+                    echo "<td>".utf8_encode($Nome)."</td>";
+                    echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
+                    echo "<td>".utf8_encode($Descricao)."</td>";
+                    echo "</tr>";
+                }
+                echo "</tbody>";
+                echo "</table>";
+
+            }else{
+                
                 echo "<tr>";
-                echo "<td> $i</td>";
-                echo "<td>".utf8_encode($Nome)."</td>";
-                echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
-                echo "<td>".utf8_encode($Descricao)."</td>";
+                echo "<td>Não há nenhum dado disponível</td>";
                 echo "</tr>";
+                echo "</tbody>";
+                echo "</table>";
             }
-            echo "</tbody>";
-            echo "</table>";
         }
     }
 ?>

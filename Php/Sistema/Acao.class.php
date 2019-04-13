@@ -26,29 +26,38 @@
             echo "</thead>";
             echo "<tbody>";
             
-            $i=0;
-            while($Acao=mysqli_fetch_array($ConsultaAcaoMembro)){
-                $i++;
-                $DataIni=$Acao['DataIni'];
-                $DataFim=$Acao['DataFim'];
-                $Data=$Acao['Data'];
-                $Nome=$Acao['Nome'];
-                $Atividades=$Acao['Atividades'];
-                $Descricao=$Acao['Descricao'];
+            if(mysqli_num_rows($ConsultaAcaoMembro)){
+                $i=0;
+                while($Acao=mysqli_fetch_array($ConsultaAcaoMembro)){
+                    $i++;
+                    $DataIni=$Acao['DataIni'];
+                    $DataFim=$Acao['DataFim'];
+                    $Data=$Acao['Data'];
+                    $Nome=$Acao['Nome'];
+                    $Atividades=$Acao['Atividades'];
+                    $Descricao=$Acao['Descricao'];
 
+                    echo "<tr>";
+                    echo "<td> $i</td>";
+                    echo "<td>".utf8_encode($Nome)."</td>";
+                    echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
+                    echo "<td>".date("d-m-Y",strtotime($DataIni))."</td>";
+                    echo "<td>".date("d-m-Y",strtotime($DataFim))."</td>";
+                    echo "<td>".utf8_encode($Atividades)."</td>";
+                    echo "<td>".utf8_encode($Descricao)."</td>";
+                    echo "</tr>";
+
+                    }
+                    echo "</tbody>";
+                    echo "</table>";
+
+            }else{
                 echo "<tr>";
-                echo "<td> $i</td>";
-                echo "<td>".utf8_encode($Nome)."</td>";
-                echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
-                echo "<td>".date("d-m-Y",strtotime($DataIni))."</td>";
-                echo "<td>".date("d-m-Y",strtotime($DataFim))."</td>";
-                echo "<td>".utf8_encode($Atividades)."</td>";
-                echo "<td>".utf8_encode($Descricao)."</td>";
+                echo "<td>Não há nenhum dado disponível</td>";
                 echo "</tr>";
-
+                echo "</tbody>";
+                echo "</table>";
             }
-            echo "</tbody>";
-            echo "</table>";
         }
     }
 ?>
