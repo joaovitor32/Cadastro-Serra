@@ -18,7 +18,6 @@
             $SQLSelect="SELECT * FROM Membro WHERE Nome='$NomeRed'";
             $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
             while($Membro=mysqli_fetch_object($ConsultaMembro)){
-                
                 $CodMembro=$Membro->CodMembro;
                 $Nome=$Membro->Nome;
                 $Curso=$Membro->Curso;

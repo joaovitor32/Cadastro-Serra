@@ -40,11 +40,13 @@
                 echo "</table>";
             
             }else{
+
                 echo "<tr>";
-                echo "<td>Não há nenhum dado disponível</td>";
+                echo "<td colspan='4'><div class='tdNoneData'>Não há nenhum dado disponível</div></td>";
                 echo "</tr>";
                 echo "</tbody>";
                 echo "</table>";
+            
             }
         }
     }
