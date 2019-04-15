@@ -25,11 +25,11 @@
         <img class="imgBoxTopoCel" src="Img/logoserra.png">
         <div class="floatBox">
             <img class="imgBoxTopo" src="Img/logoserra.png">
-            <a id="Topo0" class="Topo" href="#">Membro</a>
-            <a id="Topo1" class="Topo" href="#">Projetos</a>
-            <a id="Topo2" class="Topo" href="#">Ações</a>
-            <a id="Topo3" class="Topo" href="#">Eventos</a>
-            <a id="Topo4" class="Topo" href="#">Treinamento</a>
+            <a id="Topo0" class="Topo" href="#"><span>Membro</span></a>
+            <a id="Topo1" class="Topo" href="#"><span>Projetos</span></a>
+            <a id="Topo2" class="Topo" href="#"><span>Ações</span></a>
+            <a id="Topo3" class="Topo" href="#"><span>Eventos</span></a>
+            <a id="Topo4" class="Topo" href="#"><span>Treinamento</span></a>
         </div>
     </section>
     <section class="viewForm">
