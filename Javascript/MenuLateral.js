@@ -14,5 +14,20 @@ function Rolamento(){
         }
     }   
 }
-window.onscroll=function(){Rolamento()};
+function RemoveEffectRolamento(){
+    var i;
+    var secSite=document.getElementsByClassName('section');
+    var lengthSection=secSite.length;
+    for(i=0;i<lengthSection;i++){
+        document.getElementById('Topo'+i).classList.remove('TopoEffect');
+    }   
+}
+window.addEventListener('scroll',function(event){
+    var isScrolling;
+    Rolamento();
+    window.clearTimeout(isScrolling);
+    isScrolling=setTimeout(function(){
+        RemoveEffectRolamento();
+    },3000);
+},false);
 
