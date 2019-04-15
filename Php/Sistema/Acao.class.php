@@ -43,8 +43,8 @@
                     echo "<td>".date("d-m-Y",strtotime($Data))."</td>";
                     echo "<td>".date("d-m-Y",strtotime($DataIni))."</td>";
                     echo "<td>".date("d-m-Y",strtotime($DataFim))."</td>";
-                    echo "<td>".utf8_encode($Atividades)."</td>";
-                    echo "<td>".utf8_encode($Descricao)."</td>";
+                    echo "<td><p>".utf8_encode($Atividades)."</p></td>";
+                    echo "<td><p>".utf8_encode($Descricao)."</p></td>";
                     echo "</tr>";
 
                     }

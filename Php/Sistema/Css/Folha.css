@@ -14,87 +14,101 @@ Retira a barra lateral na responsividade
     margin-left:23%;
     margin-top:2%;
     height: 100%;
-}
-.boxFormulario{
     background-color:rgba(220,220,220,0.25);
-}
-/*--------Section 1---------*/
-.imgMembro{
-    margin-top:2%;
-    margin-left:3%;
-    margin-bottom:2%;
-    padding:5px;
-    width:225px;
-    height: 250px;
-    float:left;
-    display: block;
-    pointer-events: none;
-}
-.box1{
-    width: 35%;
-    float:left;
-    display: block;
-    margin-top:2%;
-    margin-left:4%;
-}
-.box2 {
-    width: 35%;
-    float:right;
-    display: block;
-    margin-top:2%;
-}
-.box2>div,.box1>div{
-    padding:9px;
-}
-@media screen and (max-width:700px){
-    .viewForm{
-        margin-left:1%;
-        width:98%;
-        margin-top:4%;
-    }
-    .imgMembro{
-        margin-left:20%;
-        float:none;
-    }
-    .box1{
-        margin-left:14%;
-        width:100%;
-        float:none;
-    }
-    .box2{
-        float: none;
-        width:100%;
-        margin-left:14%;
-    }
-   
-    
-}
-/*-------Bottom----------*/
-.btnSair{
-    margin-top:10%;
-    margin-left:40%;
-    margin-bottom:12%;
-    height:60px;
-    width:140px;
-    background-color:rgb(254,103,0);
-    color:white;
-    border-radius:8px;  
-    border:none;
-}
-.btnSair:hover{
-    background-color:rgba(220,220,220,0.25);
-    color:rgb(254,103,0);
-    border:1px solid rgb(254,103,0);    
-    transition:1s;
-    -o-transition:1s;
-    -moz-transition:1s;
-    -webkit-transition:1s;
-}
-.btnSair:focus{
-   outline:none;
 }
 @media screen and (max-width:760px){
-    .btnSair{
-        margin-left:18%;
+    .viewForm{
+        width:95%;
+        margin-top:2%;
+        margin-left:2%;
+    }
+}
+/*--------------Imagem e Dados do membro -------------*/
+.imgMembro{
+    width:90%;
+    height:90%;
+    margin-bottom:4%;
+    margin-left:2%;
+    margin-top:4%;
+}
+.box1{
+    float:left;
+    width:20%;
+    left:5%;
+    margin-right: 0%;
+    margin-bottom:2%;
+    position: relative;
+}
+.box2{
+    float: right;
+    float:left;
+    width:42%;
+    padding: 1% 8%;
+    margin-bottom:2%;
+    margin-left:2%;
+}
+.box3{
+    float: right;
+    width:36%;
+    padding: 1% 0%;
+    margin-bottom:2%;
+    margin-top:1%;
+}
+.box1,.box2,span{
+    display: block;
+    margin-top:1%;
+}
+@media screen and (max-width:760px){
+    .imgMembro{
+        width:60%;
+        height:60%;
+        margin-bottom:4%;
+        margin-left:15%;
+        margin-top:4%;
+    }
+    .box1{
+        float:none;
+        width:100%;
+    }
+    .box2{
+        width:45%;
+        padding:0%;
+        margin-bottom:2%;
+        margin-left:1%;
+    }
+    .box3{
+        width:45%;
+        padding:0%;
+        margin-bottom:2%;
+        margin-top:1%;
+    }
+}
+/*-------- Botoes -----------*/
+.btnVoltar{
+    margin-left:4%;
+    margin-top:6%;
+    margin-bottom:6%;
+    background-color:rgb(254,103,0);
+    border:none;
+    color:white;
+    font-size:1em;
+    padding:2% 4%;
+    border-radius:10%;
+}
+.btnVoltar:hover{
+    transition:1s;
+    -webkit-transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    background-color:transparent;
+    color:rgb(254,103,0);
+    border:1px solid rgb(254,103,0);
+}
+.btnVoltar:focus{
+    outline:none;
+}
+@media screen and (max-width:760px){
+    .btnVoltar{
+        margin-left:42%;
     }
 }

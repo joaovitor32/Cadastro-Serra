@@ -32,24 +32,24 @@
                 $DataNas=$Membro->DataNascimento;
                 $Status=$Membro->Status;
                 
-                echo "<div>";
+                echo "<div class='box1'>";
                 echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/Foto/PegaImagem.php?Id=$CodMembro'>";
                 echo "</div>";
-                echo "<div class='box1'>";
-                echo "<div><strong>Nome:</strong><span> ".utf8_encode($Nome)."</span></div>";
-                echo "<div><strong>Curso:</strong><span> ".utf8_encode($Curso)."</span></div>";
-                echo "<div><strong>Ano de entrada:</strong><span> ".date("d-m-Y",strtotime($AnoEntrada))."</span></div>";
-                echo "<div><strong>Cargo:</strong><span> ".utf8_encode($Cargo)."</span></div>";
-                echo "<div><strong>Telefone:</strong><span> ".$Telefone."</span></div>";
-                echo "<div><strong>CPF:</strong><span> ".$CPF."</span></div>";
-                echo "</div>";
                 echo "<div class='box2'>";
-                echo "<div><strong>Rua:</strong><span> ".utf8_encode($Rua)."</span></div>";
-                echo "<div><strong>Número:</strong><span> ".$Numero."</span></div>";
-                echo "<div><strong>Email:</strong><span> ".utf8_encode($Email)."</span></div>";
-                echo "<div><strong>Bairro:</strong><span> ".utf8_encode($Bairro)."</span></div>";
-                echo "<div><strong>Data de nascimento:</strong><span> ".date("m-d-Y",strtotime($DataNas))."</span></div>";
-                echo "<div><strong>Status:</strong><span> ".$Status."</span></div>";
+                echo "<span><strong>Nome:</strong> ".utf8_encode($Nome)."</span>";
+                echo "<span><strong>Curso:</strong>".utf8_encode($Curso)."</span>";
+                echo "<span><strong>Ano de entrada:</strong>".date("d-m-Y",strtotime($AnoEntrada))."</span>";
+                echo "<span><strong>Cargo:</strong> ".utf8_encode($Cargo)."</span>";
+                echo "<span><strong>Telefone:</strong> ".$Telefone."</span>";
+                echo "<span><strong>CPF:</strong> ".$CPF."</span>";
+                echo "</div>";
+                echo "<div class='box3'>";
+                echo "<span><strong>Rua:</strong> ".utf8_encode($Rua)."</span>";
+                echo "<span><strong>Número:</strong> ".$Numero."</span>";
+                echo "<span><strong>Email:</strong> ".utf8_encode($Email)."</span>";
+                echo "<span><strong>Bairro:</strong> ".utf8_encode($Bairro)."</span>";
+                echo "<span><strong>Data de nascimento:</strong> ".date("m-d-Y",strtotime($DataNas))."</span>";
+                echo "<span><strong>Status:</strong> ".$Status."</span>";
                 echo "</div>";
             }
         }

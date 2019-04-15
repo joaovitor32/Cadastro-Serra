@@ -44,14 +44,14 @@
                     
                     echo "<tr>";
                     echo "<td> $i</td>";
-                    echo "<td> $Nome</td>";
-                    echo "<td> $Cargo</td>";
+                    echo "<td>".utf8_encode($Nome)."</td>";
+                    echo "<td>".utf8_encode($Cargo)."</td>";
                     echo "<td> $Preco</td>";
                     echo "<td> $DataIniMembro</td>";
                     echo "<td> $DataFimMembro</td>";
                     echo "<td> $DataIniProjeto</td>";
                     echo "<td> $DataFimProjeto</td>";
-                    echo "<td> $Descricao</td>";
+                    echo "<td>".utf8_encode($Descricao)."</td>";
                     echo "</tr>";
 
                 }

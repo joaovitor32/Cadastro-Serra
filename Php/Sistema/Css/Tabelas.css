@@ -1,71 +1,17 @@
-table{
-    max-width:100%;
-    background-color:transparent;
-    border-collapse:collapse;
-    border-spacing:0;
-    margin-left:1.5%;
-    margin-top:2%;
+table { 
+    overflow-x:auto;
+    width: 100%;
+    border-collapse: collapse; 
+    resize: both;
+    margin-top:4%;
 }
-.table{
-    width:100%;
-    margin-bottom:2%;
-}
-.table th, .table td{
-    font-size:1em;
-    padding:10px;
-    line-height: 25px;
-    text-align:left;
-}
-.table td:last-child{
-    border-right:0%;
-}
-.table thead th{
-    font-size:1em;
-}
-@media screen and (max-width:767px){
-    .table-responsive{
-        display:block;
-        position:relative;
-        width:100%;
-      
-    }
-  .table-responsive thead,
-  .table-responsive tbody,
-  .table-responsive th,
-  .table-responsive td,
-  .table-responsive tr {
-    display: block;
-  }
-  .table-responsive td,
-  .table-responsive th {
-    height: 45px;
-  }
-  .table-responsive thead {
-    float: left;
-  }
-  .table-responsive tbody {
-    position: relative;
-    overflow-x: scroll;
-    display:block;
-    width:22%;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-  }
 
-  .table-responsive tbody tr {
-    display: inline-block;
-  }
-  table{
-    margin-left:2%;
-    margin-right:2%; 
-    margin-top:3%;
-    }
-}/*---------- Caso não haja nenhum dado------------------*/
+td>p{
+    width:60%;
+    overflow-wrap: break-word;
+}
 .tdNoneData{
-  width:100%;
-  height:100%;
-  font-weight: bold;
-  font-size:1.8em;
-  margin-top:3%;
-  margin-left:0%;
+    font-weight:bold;
+    font-size:1.6em;
+    margin-top:2%;
 }
