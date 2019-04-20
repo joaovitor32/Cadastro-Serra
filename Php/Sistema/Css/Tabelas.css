@@ -5,7 +5,9 @@ table {
     resize: both;
     margin-top:4%;
 }
-
+th{
+    text-align: center;
+}
 td>p{
     width:60%;
     overflow-wrap: break-word;

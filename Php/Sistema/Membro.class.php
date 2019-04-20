@@ -12,7 +12,16 @@
         private $Bairro;
         private $DataNas;
         private $Status;
+        private $AnoDeEntrada;
      
+        public function Estado($number){
+            if($number==1){
+                echo "<span><strong>Status:</strong> Ativo</span>";
+            }else{
+                echo "<span><strong>Status:</strong> Inativo</span>";
+            }
+        }
+
         public function SelectMembro($NomeRed){
             $BD=new BancoDeDados();
             $SQLSelect="SELECT * FROM Membro WHERE Nome='$NomeRed'";
@@ -33,12 +42,12 @@
                 $Status=$Membro->Status;
                 
                 echo "<div class='box1'>";
-                echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/Foto/PegaImagem.php?Id=$CodMembro'>";
+                echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/Foto/$CodMembro.jpeg'>";
                 echo "</div>";
                 echo "<div class='box2'>";
                 echo "<span><strong>Nome:</strong> ".utf8_encode($Nome)."</span>";
                 echo "<span><strong>Curso:</strong>".utf8_encode($Curso)."</span>";
-                echo "<span><strong>Ano de entrada:</strong>".date("d-m-Y",strtotime($AnoEntrada))."</span>";
+                echo "<span><strong>Ano de entrada:</strong> ".$AnoEntrada."</span>";
                 echo "<span><strong>Cargo:</strong> ".utf8_encode($Cargo)."</span>";
                 echo "<span><strong>Telefone:</strong> ".$Telefone."</span>";
                 echo "<span><strong>CPF:</strong> ".$CPF."</span>";
@@ -46,10 +55,10 @@
                 echo "<div class='box3'>";
                 echo "<span><strong>Rua:</strong> ".utf8_encode($Rua)."</span>";
                 echo "<span><strong>Número:</strong> ".$Numero."</span>";
-                echo "<span><strong>Email:</strong> ".utf8_encode($Email)."</span>";
                 echo "<span><strong>Bairro:</strong> ".utf8_encode($Bairro)."</span>";
+                echo "<span><strong>Email:</strong> ".utf8_encode($Email)."</span>";
                 echo "<span><strong>Data de nascimento:</strong> ".date("m-d-Y",strtotime($DataNas))."</span>";
-                echo "<span><strong>Status:</strong> ".$Status."</span>";
+                echo $this->Estado($Status);
                 echo "</div>";
             }
         }

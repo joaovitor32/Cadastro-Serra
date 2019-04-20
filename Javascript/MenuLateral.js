@@ -28,6 +28,6 @@ window.addEventListener('scroll',function(event){
     window.clearTimeout(isScrolling);
     isScrolling=setTimeout(function(){
         RemoveEffectRolamento();
-    },2000);
+    },1000);
 },false);
 
