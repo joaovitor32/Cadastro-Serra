@@ -1,0 +1,62 @@
+.displayCadastro{
+    margin-top:2%;
+    margin-left:12%;
+}
+.box1{
+    float:left;
+    margin-top:2%;
+    margin-left:14%;
+}
+.box2{
+    margin-top:2%;
+}
+.box1>span{
+    display: block;
+    margin-top:2%;
+    margin-bottom:2%;
+    color:rgb(254,103,0);
+}
+.box2>span{
+    display:block;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:rgb(254,103,0);
+}
+.box1>input,.box2>input{
+    border:1px solid rgba(254,103,0,0.6);
+    border-radius:10px;
+    color:rgb(254,103,0);
+}
+.box1>input:focus,.box2>input:focus{
+    outline:none;
+}
+.inputCadastrar{
+    margin-top:4%;
+    margin-left:5%;
+    width: 16%;
+    height: 50%;
+    color:white;
+    background-color:rgb(254,103,0);
+    border:1px solid rgb(254,103,0);
+    border-radius:10px;
+}
+.inputCadastrar:hover{
+    transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+    -o-transition:1s;
+    background-color:white;
+    color:rgb(254,103,0);
+    border:1px solid rgb(254,103,0);
+}
+input[type=file]::-webkit-file-upload-button {
+    visibility: hidden; 
+}
+  input[type=file]{
+    font-size:1em;
+    margin-left:0%;
+    outline:none;
+    cursor:pointer;
+    padding:0% 44% 0% 16%;
+    color:rgb(254,103,0);
+}

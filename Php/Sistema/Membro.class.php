@@ -39,7 +39,7 @@
                 $Email=$Membro->Email;
                 $Bairro=$Membro->Bairro;
                 $DataNas=$Membro->DataNascimento;
-                $Status=$Membro->Status;
+                $Estado=$Membro->Estado;
                 
                 echo "<div class='box1'>";
                 echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/Foto/$CodMembro.jpeg'>";
@@ -61,6 +61,14 @@
                 echo $this->Estado($Status);
                 echo "</div>";
             }
+        }
+        public function CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Emaill,$Aniversario,$Foto){
+            
+            $BD=new BancoDeDados();
+            $SQLInsert="INSERT INTO Membro (Nome,Curso,AnoDeEntrada,Cargo,Telefone,CPF,Rua,Numero,Email,DataNascimento,Bairro,Estado) VALUES('$Nome','$Curso','$AnoEntrada','$Cargo','$Telefone','$CPF','$Rua','$Numero','$Email','$Aniversario','$Bairro','1')";
+            $BD->ConectarBanco()->query($SQLInsert);
+            $BD->ConectarBanco()->close();
+        
         }
     }
 ?>
