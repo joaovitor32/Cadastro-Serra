@@ -21,7 +21,7 @@
     $linhas=mysqli_num_rows($Retorno);
     echo $linhas;
     if($linhas>0){
-        //$_SESSION mandar recado que já existe gente cadastrada com esse nome
+        header("location: /Php/Sistema/SistemaGerencia/Cadastrar/MembroCadastrar.php?errocadastro=1");
     }else{
         $Membro=new Membro();
         $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto);

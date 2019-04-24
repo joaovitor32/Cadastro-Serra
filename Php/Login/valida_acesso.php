@@ -9,10 +9,11 @@
     $SQLogin="SELECT * FROM Login1 WHERE Login1='$login' AND Senha='$senha'";
     $Result=mysqli_query($BD->ConectarBanco(),$SQLogin);
     $linha=mysqli_num_rows($Result);
-    
+
     if($linha){
-        $_SESSION['nome']=$linha['nome'];
-        $_SESSION['senha']=$linha['senha'];
+        $usuario=mysqli_fetch_assoc($Result);
+        $_SESSION['login']=$usuario['login'];
+        $_SESSION['senha']=$usuario['senha'];
         header('Location: ../Sistema/SistemaGerencia/Gerencia.php');
     }else{
         header('Location: Login.php?erro=1');

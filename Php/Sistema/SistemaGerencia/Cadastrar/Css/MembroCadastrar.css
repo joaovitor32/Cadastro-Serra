@@ -59,3 +59,9 @@ input[type=file]::-webkit-file-upload-button {
     cursor:pointer;
     color:rgb(254,103,0);
 }
+.spanAlerta{
+    color:rgb(254,103,0);
+    font-size:1.2em;
+    font-weight: bold;
+    margin-left:27%;
+}

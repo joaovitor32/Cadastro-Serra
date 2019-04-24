@@ -1,4 +1,3 @@
-
 <img class="imgEngrenagemResize" src="/Php/Sistema/SistemaGerencia/Img/engrenagem.png">
 <div class="floatBox">
     <img class="imgEngrenagem" src="/Php/Sistema/SistemaGerencia/Img/engrenagem.png">
