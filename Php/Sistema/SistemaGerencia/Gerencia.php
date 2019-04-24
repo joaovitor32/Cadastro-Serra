@@ -14,7 +14,7 @@
     <body>
         <section>
            <?php
-                require('BarraLateralSistema.php');
+                require('../SistemaGerencia/BarraLateral/BarraLateralSistema.php');
            ?>
         </section>
         <section class="displayMensagem">

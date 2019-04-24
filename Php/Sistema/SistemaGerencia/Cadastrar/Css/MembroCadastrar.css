@@ -57,6 +57,5 @@ input[type=file]::-webkit-file-upload-button {
     margin-left:0%;
     outline:none;
     cursor:pointer;
-    padding:0% 44% 0% 16%;
     color:rgb(254,103,0);
 }

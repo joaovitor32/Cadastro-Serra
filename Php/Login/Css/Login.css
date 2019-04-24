@@ -1,0 +1,48 @@
+.imgLogin{
+    width:30%;
+    height:92%;
+    margin-top:2%;
+    margin-left:7.5%;
+}
+span,input{
+    display: block;
+    margin-top:2%;
+}
+.boxFormulario{
+    margin-left:12%;
+    margin-top:3%;
+}
+span{
+    color:rgb(254,103,0);
+}
+input{
+    border:0.06em solid rgb(254,103,0);
+    padding:0% 2%;
+    border-radius:1em;
+}
+input:focus{
+    outline:none;
+}
+.checkCadastro{
+    width:20%;
+    margin-left:2%;
+    margin-top:6%;
+    padding:0.5% 1%;
+    background-color: rgb(254,103,0);
+    color:white;
+}
+.checkCadastro:hover{
+    color: rgb(254,103,0);
+    background-color:white;
+    border:0.06em solid rgb(254,103,0);
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+}
+.spanAlerta{
+    color:rgb(254,103,0);
+    font-size:1em;
+    font-weight: bold;
+    margin-left:12%;
+}
