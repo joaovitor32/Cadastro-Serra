@@ -12,9 +12,9 @@
 
     if($linha){
         $usuario=mysqli_fetch_assoc($Result);
-        $_SESSION['login']=$usuario['login'];
-        $_SESSION['senha']=$usuario['senha'];
-        header('Location: ../Sistema/SistemaGerencia/Gerencia.php');
+        $_SESSION['usuarioLogin1']=$usuario['Login1'];
+        $_SESSION['usuarioSenha']=$usuario['Senha'];
+        header('Location: /Php/Sistema/SistemaGerencia/Gerencia.php');
     }else{
         header('Location: Login.php?erro=1');
     }

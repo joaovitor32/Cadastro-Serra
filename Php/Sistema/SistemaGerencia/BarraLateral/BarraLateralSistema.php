@@ -11,6 +11,12 @@
             <a href="Cadastrar/EventoCadastrar.php">Evento</a>
         </div>
     </div>
+    <div class="dropdown">
+        <img class="Ico" src="/Php/Sistema/SistemaGerencia/Icons/lupa.svg"><img class="Seta" src="/Php/Sistema/SistemaGerencia/Icons/setabaixo.svg">
+        <div class="dropdown-content">
+            <a href="/Php/Sistema/SistemaGerencia/Visualizar/MembroVisualizar.php">Membro</a>
+        </div>
+    </div>
     <a href="/Php/Login/sair.php"><img class="IcoLogout" src="/Php/Sistema/SistemaGerencia/Icons/logout.svg"></a>
 </div>
 

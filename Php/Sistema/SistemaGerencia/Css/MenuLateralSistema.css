@@ -63,6 +63,7 @@ body{
     width:12%;
     height:100%;
     z-index:1;
+    background-color:rgba(220,220,220,0.4);
     top:0;
     left:0;
     padding:2% 0%;
@@ -73,7 +74,7 @@ body{
 .floatBox a{
     color:rgb(254,103,0);
     display:block;
-    padding: 2% 0% 2% 28%;
+    padding: 2% 0% 2% 34%;
     margin-top:2%;
     font-size:1em;
     font-weight:bold;

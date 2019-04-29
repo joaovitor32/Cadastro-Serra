@@ -26,5 +26,5 @@
         $Membro=new Membro();
         $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto);
     }
-    //header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
+    header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
 ?>

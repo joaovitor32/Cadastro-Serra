@@ -16,9 +16,9 @@
      
         public function Estado($number){
             if($number==1){
-                echo "<span><strong>Status:</strong> Ativo</span>";
+                echo "<td><strong>Ativo na empresa</strong></td>";
             }else{
-                echo "<span><strong>Status:</strong> Inativo</span>";
+                echo "<td><strong>Inativo na empresa</strong></td>";
             }
         }
 
@@ -58,7 +58,7 @@
                 echo "<span><strong>Bairro:</strong> ".utf8_encode($Bairro)."</span>";
                 echo "<span><strong>Email:</strong> ".utf8_encode($Email)."</span>";
                 echo "<span><strong>Data de nascimento:</strong> ".date("m-d-Y",strtotime($DataNas))."</span>";
-                echo $this->Estado($Status);
+                echo $this->Estado($Estado);
                 echo "</div>";
             }
         }
@@ -68,7 +68,67 @@
             $SQLInsert="INSERT INTO Membro (Nome,Curso,AnoDeEntrada,Cargo,Telefone,CPF,Rua,Numero,Email,DataNascimento,Bairro,Estado) VALUES('$Nome','$Curso','$AnoEntrada','$Cargo','$Telefone','$CPF','$Rua','$Numero','$Email','$Aniversario','$Bairro','1')";
             $BD->ConectarBanco()->query($SQLInsert);
             $BD->ConectarBanco()->close();
+            header("location: /Php/Sistema/SistemaGerencia/Cadastrar/MembroCadastrar.php");
+            //Fazer manipulação de foto
         
+        }
+        public function VisualizarMembro(){
+            $BD=new BancoDeDados();
+            $SQLSelect="SELECT * FROM Membro";
+            $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+
+            echo "<table id='myTable' class='Tabela'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>Nome:</th>";      
+            echo "<th>Curso;</th>";     
+            echo "<th>Ano de Entrada:</th>";
+            echo "<th>Cargo:</th>";
+            echo "<th>Telefone:</th>";
+            echo "<th>CPF:</th>";
+            echo "<th>Rua:</th>";
+            echo "<th>Número:</th>";
+            echo "<th>Email:</th>";
+            echo "<th>Bairro:</th>";
+            echo "<th>Data de nascimento:</th>";
+            echo "<th>Estado:</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+
+            while($Membro=mysqli_fetch_object($ConsultaMembro)){
+                $CodMembro=$Membro->CodMembro;
+                $Nome=$Membro->Nome;
+                $Curso=$Membro->Curso;
+                $AnoEntrada=$Membro->AnoDeEntrada;
+                $Cargo=$Membro->Cargo;
+                $Telefone=$Membro->Telefone;
+                $CPF=$Membro->CPF;
+                $Rua=$Membro->Rua;
+                $Numero=$Membro->Numero;
+                $Email=$Membro->Email;
+                $Bairro=$Membro->Bairro;
+                $DataNas=$Membro->DataNascimento;
+                $Estado=$Membro->Estado;
+                
+                echo "<tr>";
+                echo "<td>".utf8_encode($Nome)."</td>";            
+                echo "<td>".utf8_encode($Curso)."</td>";           
+                echo "<td>".date("d-m-Y",strtotime($AnoEntrada))."</td>";
+                echo "<td>".utf8_encode($Cargo)."</td>";
+                echo "<td>".$Telefone."</td>"; 
+                echo "<td>".$CPF."</td>";    
+                echo "<td>".utf8_encode($Rua)."</td>";
+                echo "<td>".$Numero."</td>";
+                echo "<td>".utf8_encode($Email)."</td>";
+                echo "<td>".utf8_encode($Bairro)."</td>";
+                echo "<td>".date("d-m-Y",strtotime($DataNas))."</td>";
+                echo $this->Estado($Estado);
+                echo "</tr>";
+            }
+
+            echo "</tbody>";
+            echo "</table>";
         }
     }
 ?>
