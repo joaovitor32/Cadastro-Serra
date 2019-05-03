@@ -1,6 +1,8 @@
 <?php
-    include("/home/buzina/Cadastro-Serra/Php/Sistema/Conexao.class.php");
-    include("/home/buzina/Cadastro-Serra/Php/Sistema/Membro.class.php");
+
+
+    include("../Classes/Conexao.class.php");
+    include("../Classes/Membro.class.php");
 
     $Nome=$_POST['nome'];
     $Curso=$_POST['curso'];
@@ -27,4 +29,5 @@
         $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto);
     }
     header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
+
 ?>

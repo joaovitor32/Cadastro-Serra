@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../Sistema/Conexao.class.php");
+    include("../Sistema/SistemaGerencia/Classes/Conexao.class.php");
 
     $login=$_POST['login'];
     $senha=md5($_POST['senha']);

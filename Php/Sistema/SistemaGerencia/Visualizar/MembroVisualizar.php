@@ -27,8 +27,8 @@
         <section>
            <?php
                 require('../BarraLateral/BarraLateralSistema.php');
-                require('/home/buzina/Cadastro-Serra/Php/Sistema/Conexao.class.php');
-                require('/home/buzina/Cadastro-Serra/Php/Sistema/Membro.class.php');
+                require('../Classes/Conexao.class.php');
+                require('../Classes/Membro.class.php');
            ?>
         </section>
         <section>

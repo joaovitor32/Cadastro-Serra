@@ -23,7 +23,7 @@
         <section class="displayCadastro">
             <div class="container">
                 <?= isset($_GET['errocadastro']) ?'<span class="spanAlerta";">Erro detectado: Membro já cadastrado no sitema</span> ' : "";?>
-                <form action="CadastrarBD/MembroBD.php" method="post" enctype="multipart/form-data">
+                <form action="MembroBD.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-12 offset-md-1">
                             <div class="box1">
