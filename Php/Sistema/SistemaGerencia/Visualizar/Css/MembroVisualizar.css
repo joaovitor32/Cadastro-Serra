@@ -1,4 +1,6 @@
-.Tabela{
-    width:80%;
-    height: 100%;
+.boxTabela{
+   margin-top:2%;
+   margin-left:6%;
+   overflow-x: scroll;
+   width:100%;
 }

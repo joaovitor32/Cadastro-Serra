@@ -33,10 +33,12 @@
         </section>
         <section>
             <div class="container">
-                <?php
-                    $Membro= new Membro();
-                    $Membro->VisualizarMembro();
-                ?>
+                <div class="boxTabela">
+                    <?php
+                        $Membro= new Membro();
+                        $Membro->VisualizarMembro();
+                    ?>
+                </div>
             </div>
         </section>
     </body>

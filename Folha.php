@@ -15,12 +15,12 @@
 <body>
     <?php
         $NomeRed=$_POST['Nome'];
-        require('Php/Sistema/Conexao.class.php');
-        include("Php/Sistema/Membro.class.php");
-        include("Php/Sistema/Acao.class.php");
-        include("Php/Sistema/Projeto.class.php");
-        include("Php/Sistema/Evento.class.php");
-        include("Php/Sistema/Treinamento.class.php");
+        require('Php/Sistema/SistemaGerencia/Classes/Conexao.class.php');
+        include("Php/Sistema/SistemaGerencia/Classes/Membro.class.php");
+        include("Php/Sistema/SistemaGerencia/Classes/Acao.class.php");
+        include("Php/Sistema/SistemaGerencia/Classes/Projeto.class.php");
+        include("Php/Sistema/SistemaGerencia/Classes/Evento.class.php");
+        include("Php/Sistema/SistemaGerencia/Classes/Treinamento.class.php");
     ?>
     <section>
         <img class="imgBoxTopoCel" src="Img/logoserra.png">

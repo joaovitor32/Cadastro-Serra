@@ -10,7 +10,7 @@
     $Cargo=$_POST['cargo'];
     $Telefone=$_POST['telefone'];
     $CPF=$_POST['cpf'];
-    $Foto=$_FILES["foto"]["name"];
+    $Foto["foto"]=$_FILES["foto"];
     $Rua=$_POST['rua'];
     $Numero=$_POST['numero'];
     $Bairro=$_POST['bairro'];
@@ -21,13 +21,13 @@
     $SQLConsulta="SELECT * FROM Membro WHERE Nome='$Nome'";
     $Retorno=mysqli_query($BD->ConectarBanco(),$SQLConsulta);
     $linhas=mysqli_num_rows($Retorno);
-    echo $linhas;
+
     if($linhas>0){
         header("location: /Php/Sistema/SistemaGerencia/Cadastrar/MembroCadastrar.php?errocadastro=1");
     }else{
         $Membro=new Membro();
-        $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto);
+        $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto["foto"]);
     }
-    header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
+    //header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
 
 ?>

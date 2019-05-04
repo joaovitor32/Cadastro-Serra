@@ -42,7 +42,7 @@
                 $Estado=$Membro->Estado;
                 
                 echo "<div class='box1'>";
-                echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/Foto/$CodMembro.jpeg'>";
+                echo "<img oncontextmenu='return false' class='imgMembro' src='/Php/Sistema/SistemaGerencia/Fotos/$CodMembro.jpeg'>";
                 echo "</div>";
                 echo "<div class='box2'>";
                 echo "<span><strong>Nome:</strong> ".utf8_encode($Nome)."</span>";
@@ -62,14 +62,26 @@
                 echo "</div>";
             }
         }
-        public function CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Emaill,$Aniversario,$Foto){
-            
+        public function CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto){
             $BD=new BancoDeDados();
             $SQLInsert="INSERT INTO Membro (Nome,Curso,AnoDeEntrada,Cargo,Telefone,CPF,Rua,Numero,Email,DataNascimento,Bairro,Estado) VALUES('$Nome','$Curso','$AnoEntrada','$Cargo','$Telefone','$CPF','$Rua','$Numero','$Email','$Aniversario','$Bairro','1')";
-            $BD->ConectarBanco()->query($SQLInsert);
-            $BD->ConectarBanco()->close();
+            $conexao=$BD->ConectarBanco();
+            if( mysqli_query($conexao, $SQLInsert)){
+                $NewCode=$conexao->insert_id;
+            }
+            $conexao->close();
+            if($Foto["error"] == 0){
+                $arquivo_tmp=$Foto['tmp_name'];
+                $nome =$Foto['name'];
+                $extensao=pathinfo($nome,PATHINFO_EXTENSION);
+                $extensao=strtolower($extensao);
+                if(strstr('.jpg;.jpeg;.gif;.png',$extensao)){
+                    $NewName=$NewCode.'.jpeg';
+                    $Destino="../Fotos/".$NewName;
+                    @move_uploaded_file($arquivo_tmp,$Destino);                    
+                }
+            }
             header("location: /Php/Sistema/SistemaGerencia/Cadastrar/MembroCadastrar.php");
-            //Fazer manipulação de foto
         
         }
         public function VisualizarMembro(){
