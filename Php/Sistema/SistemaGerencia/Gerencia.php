@@ -13,7 +13,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <!---Barra lateral-->
     <body>
         <section>
            <?php
@@ -25,9 +24,10 @@
                 <div class="row">
                     <div class="col-md-12 offset-md-1">
                         <img class="imgGerencia" src="Img/logoserra.png">
-                        <div class="textH">
+                        <div class="textH"> 
                             <h1><strong>Bem-vindo!<strong><h1>
                             <h2>Clique em uma das Abas!</h2>
+                            <h5><?= isset($_GET['erro']) ? '<span class="spanAlerta";">Erro ao dar Logout</span> ' : "";?></h5>
                         </div>
                     </div>
                 </div>

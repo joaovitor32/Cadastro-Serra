@@ -1,9 +1,13 @@
 <?php
     session_start();
-
     $_SESSION = array();
-    session_write_close();
-    setcookie(session_name(),'',0,'/');
-    session_destroy();
-    header('Location: /Php/Login/Login.php');
+    if(session_destroy()){
+        unset($_COOKIE['login']);
+        unset($_COOKIE['senha']);
+        ob_end_flush();
+        header('Location: /Php/Login/Login.php');
+        exit;
+    }else{
+        header('Location: /Php/Sistema/SistemaGerencia/Gerencia.php?erro=2');
+    }
 ?>

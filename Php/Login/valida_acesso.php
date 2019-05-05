@@ -1,4 +1,6 @@
 <?php
+  
+    session_name('Login.php');
     session_start();
     include("../Sistema/SistemaGerencia/Classes/Conexao.class.php");
 
@@ -11,9 +13,8 @@
     $linha=mysqli_num_rows($Result);
 
     if($linha){
-        $usuario=mysqli_fetch_assoc($Result);
-        $_SESSION['usuarioLogin1']=$usuario['Login1'];
-        $_SESSION['usuarioSenha']=$usuario['Senha'];
+        $_SESSION['Login1']=$login;
+        $_SESSION['Senha']=$senha;
         header('Location: /Php/Sistema/SistemaGerencia/Gerencia.php');
     }else{
         header('Location: Login.php?erro=1');
