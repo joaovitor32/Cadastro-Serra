@@ -1,0 +1,79 @@
+span{
+    display: block;
+}
+.box1{
+    position:relative;
+    margin-top:25%;
+    padding: 0% 0% 0% 45%;
+}
+.box2{
+    position: relative;
+    margin-top:25%;
+    padding: 0% 0% 0% 25%;
+}
+.box3{
+    position: relative;
+    padding: 0% 0% 0% 0%;
+    margin-top:30%;
+}
+.box1>span{
+    display:block;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:rgb(254,103,0);
+}
+.box2>span{
+    display:block;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:rgb(254,103,0);
+}
+.box3>span{
+    display:block;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:rgb(254,103,0);
+}
+.spanInput{
+    display:block;
+    margin-top:0.5%;
+    margin-bottom:0.5%;
+    color:rgb(254,103,0);
+}
+.box1>input:focus,.box2>input:focus,.box3>input:focus{
+    outline:none;
+}
+.box1>input,.box2>input,.box3>span>input,.inputMembro{
+    border:1px solid rgb(254,103,0);
+    border-radius:10px;
+    color:rgb(254,103,0);
+}
+.inputCadastrar{
+    width:20%;
+    height:40%;
+    font-size:1.2em;
+    background-color:rgb(254,103,0);
+    color:white;
+    border:none;
+    border-radius:15px;
+    margin-top:8%;
+    margin-left:6%;
+}
+.inputCadastrar:hover{
+    transition:1s;
+    -webkit-transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    color:rgb(254,103,0);
+    background-color:white;
+    border:1px solid rgb(254,103,0);
+}
+
+.inputCadastrar:focus{
+    outline:none;
+}
+.iconAdd{
+    position: fixed;
+    width:3.5%;
+    height:3.5%;
+}

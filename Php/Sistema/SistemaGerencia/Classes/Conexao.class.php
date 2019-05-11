@@ -4,7 +4,7 @@ class BancoDeDados{
     private $host="127.0.0.1";
     private $username="root";
     private $password="";
-    private $dbname="CadastroSerra";
+    private $dbname="cadastroserra";
 
     public function ConectarBanco(){
         $conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);

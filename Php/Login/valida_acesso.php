@@ -1,6 +1,5 @@
 <?php
   
-    session_name('Login.php');
     session_start();
     include("../Sistema/SistemaGerencia/Classes/Conexao.class.php");
 
