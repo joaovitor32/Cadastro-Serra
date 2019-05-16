@@ -20,14 +20,18 @@
                 require('../BarraLateral/BarraLateralSistema.php');
            ?>
         </section>
+       <section>
+            <?php $_GET['errocadastro']==1? '<span class="spanAlerta";">Erro detectado: Entrada de membros inconsistente, verifique ou cadastre' : "";?>
+            <?php $_GET['errocadastro']==2 ?'<span class="spanAlerta";">Erro detectado: Projeto já cadastrado no sitema</span> ' : "";?>
+            <?php $_GET['errocadastro']==3 ?'<span class="spanAlerta";">Erro detectado: Erro interno do sistema ao cadastro projeto novo</span> ' : "";?>
+        </section>
         <section class="displayCadastro">
             <div class="container">
-                <?= isset($_GET['errocadastro']) ?'<span class="spanAlerta";">Erro detectado: Projeto já cadastrado no sitema</span> ' : "";?>
                 <form action="ProjetoBD.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
                             <div class="box1">
-                                <span>Nome do projeto:</span> <input type="text" name="nomedoprojeto" required>
+                                <span>Nome do projeto:</span> <input type="text" name="projeto" required>
                                 <span>Preço:</span><input type="number" name="preco" required>
                                 <span>Descrição:</span><input type="text" name="descricao" required>
                             </div>
@@ -37,17 +41,13 @@
                                 <span>Data de início:</span><input type="date" name="iniprojeto" required>
                                 <span>Data de finalização prevista:</span><input type="date" name="fimprojeto" required>
                                 <span>Contratante:</span><input type="text" name="contratante" required>
+                                <input class="inputCadastrar" name="cadastro" type="submit" value="Cadastrar">
                             </div>
                         </div>
                         <div class="col">
                             <div class="box3" id="boxPai">
-                                <span>Qtd de membros: <input type="text" id="nummembro" required><a href=# onclick="addField();"><img class="iconAdd" src="Icon/add.svg"></span>
+                                <span>Qtd de membros: <input type="number" id="nummembro" required><a href=# onclick="addField();"><img class="iconAdd" src="Icon/add.svg"></span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 offset-md-4">
-                            <input class="inputCadastrar" name="cadastro" type="submit" value="Cadastrar">
                         </div>
                     </div>
                 </form>

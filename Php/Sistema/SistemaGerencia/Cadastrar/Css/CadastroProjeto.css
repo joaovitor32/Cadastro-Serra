@@ -1,18 +1,24 @@
 span{
     display: block;
 }
+.spanAlerta{
+   font-size:1.2em;
+   color:rgb(254,103,0);
+   margin-left:32%;
+   margin-top:4%;
+}
 .box1{
-    position:relative;
+    position: absolute;
     margin-top:25%;
     padding: 0% 0% 0% 45%;
 }
 .box2{
-    position: relative;
+    position: absolute;
     margin-top:25%;
     padding: 0% 0% 0% 25%;
 }
 .box3{
-    position: relative;
+    position: absolute;
     padding: 0% 0% 0% 0%;
     margin-top:30%;
 }
@@ -47,25 +53,28 @@ span{
     border:1px solid rgb(254,103,0);
     border-radius:10px;
     color:rgb(254,103,0);
+
+}
+.labelMembro{
+    color:rgb(254,103,0);
 }
 .inputCadastrar{
-    width:20%;
-    height:40%;
+    width:75%;
+    height:60%;
     font-size:1.2em;
-    background-color:rgb(254,103,0);
-    color:white;
+    background-color:white;
     border:none;
     border-radius:15px;
-    margin-top:8%;
-    margin-left:6%;
+    margin-top:12%;
+    margin-left:0%;
 }
 .inputCadastrar:hover{
     transition:1s;
     -webkit-transition:1s;
     -o-transition:1s;
     -moz-transition:1s;
-    color:rgb(254,103,0);
-    background-color:white;
+    color:white;
+    background-color:rgb(254,103,0);
     border:1px solid rgb(254,103,0);
 }
 

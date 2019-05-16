@@ -1,5 +1,5 @@
 <?php
-    class ProjetosMembro extends BancoDeDados{
+    class Projetos extends BancoDeDados{
         private $DataIniMembro;
         private $DataFimMembro;
         private $Cargo;
@@ -66,6 +66,44 @@
                 echo "</table>";
             
             }
+        }
+        public function CadastrarProjeto($Membro1,$ProjetoNome,$DataIni,$DataFim,$Preco,$Descri,$Contratante){
+            $BD=new BancoDeDados();
+            $SQLSelect= [];
+            $CodMembro=[];
+            $TamIt=0;
+            $SQLInsertProjeto="INSERT INTO Projeto (Nome,DataIni,DataFim,Preco,Descricao,Contratante) VALUES('$ProjetoNome','$DataIni','$DataFim','$Preco','$Descri','$Contratante')";
+            $conexao=$BD->ConectarBanco();
+            if(mysqli_query($conexao, $SQLInsertProjeto)){
+                $CodeNewProject=$conexao->insert_id;
+                for($i=0;$i<count($Membro1);$i++){
+                    $NomeMembro=$Membro1[$i];
+                    $SQLSelect[$i]="SELECT CodMembro FROM Membro WHERE Nome='$NomeMembro'";
+                    $SQLSelectMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect[$i]);
+                    while($Membro=mysqli_fetch_assoc($SQLSelectMembro)){
+                        $CodMembro[$i]=$Membro["CodMembro"];
+                    }
+                }
+            }else{
+                header("location: /Php/Sistema/SistemaGerencia/Cadastrar/ProjetoCadastrar.php?errocadastro=3");
+            }
+            $ProjetosMembro = new ProjetosMembro();
+            $ProjetosMembro->InsertMembroProjeto($CodeNewProject,$CodMembro,$TamIt);
+            $conexao->close();
+        }
+    }
+    class ProjetosMembro extends BancoDeDados{
+        public function InsertMembroProjeto($CodeNewProject,$CodMembro){
+            $BD = new BancoDeDados();
+            $conexao=$BD->ConectarBanco();
+            $SQLInsertMembroProjeto=[];
+            for($i=0;$i<sizeof($CodMembro);$i++){
+                $ValorCodMembro=$CodMembro[$i];
+                $SQLInsertMembroProjeto[$i]="INSERT INTO ProjetoMembro (CodMembro,CodProjeto) VALUES('$ValorCodMembro','$CodeNewProject')";
+                mysqli_query($conexao, $SQLInsertMembroProjeto[$i]);
+            }
+            $conexao->close();
+            header("location: /Php/Sistema/SistemaGerencia/Cadastrar/ProjetoCadastrar.php");
         }
     }
 ?>

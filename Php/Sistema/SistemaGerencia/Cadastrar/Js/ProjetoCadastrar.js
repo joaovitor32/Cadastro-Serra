@@ -6,14 +6,9 @@ function addField(){
             container.removeChild(container.lastChild);
         }
         for(let i=0;i<number;i++){
-            var span=container.appendChild(document.createElement("span"));
-            span.appendChild(document.createTextNode("Membro: "));
-            var input=document.createElement("input");
-            input.classList.add("inputMembro");
-            input.type="text";
-            input.name="member"+i;
-            container.appendChild(input);
-            //container.appendChild(document.createElement("a"));
+            var divInputs=document.createElement("div");
+            divInputs.innerHTML="<label class='labelMembro'>Membro:</label> <input class='inputMembro' type='text' name='membro[]'>"
+            container.appendChild(divInputs);
         }
     }    
 }
