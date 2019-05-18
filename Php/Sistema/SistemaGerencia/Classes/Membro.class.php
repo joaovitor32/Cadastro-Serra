@@ -142,5 +142,14 @@
             echo "</tbody>";
             echo "</table>";
         }
+        public function SelectMembroJs($NomeJs){
+            $BD=new BancoDeDados();
+            $SQLSelect="SELECT * FROM Membro WHERE Nome LIKE '%$NomeJs%'";
+            $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+            while($Membro=mysqli_fetch_object($ConsultaMembro)){
+                $Resultado=$Membro->Nome;
+            }
+            echo $Resultado;
+        }
     }
 ?>

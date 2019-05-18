@@ -52,6 +52,7 @@ span{
 .box1>input,.box2>input,.box3>span>input,.inputMembro{
     border:1px solid rgb(254,103,0);
     border-radius:10px;
+    outline:none;
     color:rgb(254,103,0);
 
 }

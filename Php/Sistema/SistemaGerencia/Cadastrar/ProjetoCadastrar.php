@@ -21,17 +21,15 @@
            ?>
         </section>
        <section>
-            <?php $_GET['errocadastro']==1? '<span class="spanAlerta";">Erro detectado: Entrada de membros inconsistente, verifique ou cadastre' : "";?>
-            <?php $_GET['errocadastro']==2 ?'<span class="spanAlerta";">Erro detectado: Projeto já cadastrado no sitema</span> ' : "";?>
-            <?php $_GET['errocadastro']==3 ?'<span class="spanAlerta";">Erro detectado: Erro interno do sistema ao cadastro projeto novo</span> ' : "";?>
+            <?= isset($_GET['errocadastro']) ? '<span class="spanAlerta";">Erro detectado: Projeto já cadastrado no sitema</span> ' : " ";?>
         </section>
         <section class="displayCadastro">
             <div class="container">
-                <form action="ProjetoBD.php" method="post" enctype="multipart/form-data">
+                <form id="formulario" action="ProjetoBD.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
                             <div class="box1">
-                                <span>Nome do projeto:</span> <input type="text" name="projeto" required>
+                                <span><div id="resultado"></div>Nome do projeto:</span> <input type="text" name="projeto" required>
                                 <span>Preço:</span><input type="number" name="preco" required>
                                 <span>Descrição:</span><input type="text" name="descricao" required>
                             </div>
