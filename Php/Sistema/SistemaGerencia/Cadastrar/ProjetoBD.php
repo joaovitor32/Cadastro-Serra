@@ -15,7 +15,7 @@
     //Não lembro a utilidade disso mais $MembroArray = '"' . implode('","', $Membro) . '"';
     $BD=new BancoDeDados();
     $SQLConsultaProjeto="SELECT * FROM Projeto WHERE Nome = '$ProjetoNome'";
-    $Retorno=mysqli_query($BD->ConectarBanco(),$SQLConsultaProjeto);
+    $Retorno1=mysqli_query($BD->ConectarBanco(),$SQLConsultaProjeto);
     $linhas=mysqli_num_rows($Retorno1);
     if($linhas>0){
         header("location: /Php/Sistema/SistemaGerencia/Cadastrar/ProjetoCadastrar.php?errocadastro=1");
