@@ -5,6 +5,7 @@
 <html> 
     <head>
         <title>Cadastro</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../Css/MenuLateralSistema.css">
         <link rel="stylesheet" type="text/css" href="Css/CadastroProjeto.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">

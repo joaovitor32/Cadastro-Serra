@@ -87,3 +87,8 @@ span{
     width:3.5%;
     height:3.5%;
 }
+
+.nomeLembrete{
+    color:rgb(254,103,0);
+    display: block;
+}

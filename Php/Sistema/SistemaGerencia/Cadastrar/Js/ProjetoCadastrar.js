@@ -8,13 +8,14 @@ function addField(){
         }
         for(let i=0;i<number;i++){
             var divInputs=document.createElement("div");
-            divInputs.innerHTML="<label class='labelMembro'>Membro:</label><input class='inputMembro'  autocomplete='off' type='text' onkeypress='buscarMembroTimer(this.value,"+i+")' name='membro[]'>"
+            divInputs.innerHTML="<label class='labelMembro'>Membro:</label><input class='inputMembro'  autocomplete='off' type='text' onkeyup='buscarMembro(this.value,"+i+")' onmouseout='removeLembrete("+i+")' name='membro[]'><div class='lembreteMembro'></div>"
             container.appendChild(divInputs);
         }
     }  
 }
-function buscarMembroTimer(Nome,posInput){
-    setInterval(buscarMembro(Nome,posInput),1000);
+function removeLembrete(posInput){
+    var lembreteMembro=document.getElementsByClassName("lembreteMembro");
+    lembreteMembro[posInput].innerHTML="";
 }
 function buscarMembro(Nome,posInput){
     if(window.XMLHttpRequest){
@@ -22,14 +23,14 @@ function buscarMembro(Nome,posInput){
     }else{
         req = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    var inputMembro=document.getElementsByClassName("inputMembro");
+    var lembreteMembro=document.getElementsByClassName("lembreteMembro");
     var url="./buscarMembroJs.php?valor="+Nome;
     req.open("Get",url,true);
     req.onreadystatechange=function(){
         if(req.readyState==4 && req.status==200){
-            var resposta=req.responseText;
-        }   
-        inputMembro[posInput].value=resposta;
+            var resposta=req.response;
+        }
+        lembreteMembro[posInput].innerHTML="<strong class='nomeLembrete'>"+resposta+"<strong>";
     }
     req.send(null);
 }

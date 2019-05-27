@@ -57,7 +57,7 @@
                 echo "<span><strong>Número:</strong> ".$Numero."</span>";
                 echo "<span><strong>Bairro:</strong> ".utf8_encode($Bairro)."</span>";
                 echo "<span><strong>Email:</strong> ".utf8_encode($Email)."</span>";
-                echo "<span><strong>Data de nascimento:</strong> ".date("m-d-Y",strtotime($DataNas))."</span>";
+                echo "<span><strong>Data de nascimento:</strong> ".date("d-m-Y",strtotime($DataNas))."</span>";
                 echo $this->Estado($Estado);
                 echo "</div>";
             }
@@ -92,22 +92,23 @@
             echo "<table id='myTable' class='Tabela'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>Nome:</th>";      
-            echo "<th>Curso;</th>";     
-            echo "<th>Ano de Entrada:</th>";
-            echo "<th>Cargo:</th>";
-            echo "<th>Telefone:</th>";
-            echo "<th>CPF:</th>";
-            echo "<th>Rua:</th>";
-            echo "<th>Número:</th>";
-            echo "<th>Email:</th>";
-            echo "<th>Bairro:</th>";
-            echo "<th>Data de nascimento:</th>";
-            echo "<th>Estado:</th>";
+            echo "<th>Nome: </th>";  
+            echo "<th>Visuzalizar ficha :</th>";    
+            echo "<th>Curso: </th>";     
+            echo "<th>Ano de Entrada: </th>";
+            echo "<th>Cargo: </th>";
+            echo "<th>Telefone: </th>";
+            echo "<th>CPF: </th>";
+            echo "<th>Rua: </th>";
+            echo "<th>Número: </th>";
+            echo "<th>Email: </th>";
+            echo "<th>Bairro: </th>";
+            echo "<th>Data de nascimento: </th>";
+            echo "<th>Estado: </th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-
+            echo "<tr>";
             while($Membro=mysqli_fetch_object($ConsultaMembro)){
                 $CodMembro=$Membro->CodMembro;
                 $Nome=$Membro->Nome;
@@ -123,8 +124,9 @@
                 $DataNas=$Membro->DataNascimento;
                 $Estado=$Membro->Estado;
                 
-                echo "<tr>";
+            
                 echo "<td>".utf8_encode($Nome)."</td>";            
+                echo "<td><a href='../Classes/DadosEspecificos/FolhaSistemaMembro.php?Nome=$Nome'  target='_blank'><img style='width:60%;padding-left:20%;' src='../Classes/DadosEspecificos/Img/eye.svg'></a></td>";
                 echo "<td>".utf8_encode($Curso)."</td>";           
                 echo "<td>".date("d-m-Y",strtotime($AnoEntrada))."</td>";
                 echo "<td>".utf8_encode($Cargo)."</td>";
@@ -138,7 +140,6 @@
                 echo $this->Estado($Estado);
                 echo "</tr>";
             }
-
             echo "</tbody>";
             echo "</table>";
         }
@@ -147,7 +148,7 @@
             $SQLSelect="SELECT * FROM Membro WHERE Nome LIKE '%$NomeJs%'";
             $ConsultaMembro=mysqli_query($BD->ConectarBanco(),$SQLSelect);
             while($Membro=mysqli_fetch_object($ConsultaMembro)){
-                $Resultado=$Membro->Nome;
+               $Resultado=$Membro->Nome;
             }
             echo $Resultado;
         }

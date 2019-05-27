@@ -1,0 +1,3 @@
+function FecharPagina(){
+    window.close();
+}

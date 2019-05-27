@@ -7,7 +7,7 @@
         <title>Visualizar</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../Css/MenuLateralSistema.css">
-        <link rel="stylesheet" type="text/css" href="Css/MembroVisualizar.css">
+        <link rel="stylesheet" type="text/css" href="Css/ProjetoVisualizar.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -29,15 +29,15 @@
            <?php
                 require('../BarraLateral/BarraLateralSistema.php');
                 require('../Classes/Conexao.class.php');
-                require('../Classes/Membro.class.php');
+                require('../Classes/Projeto.class.php');
            ?>
         </section>
         <section>
             <div class="container">
                 <div class="boxTabela">
                     <?php
-                        $Membro= new Membro();
-                        $Membro->VisualizarMembro();
+                        $Projeto= new Projetos();
+                        $Projeto->VisualizarProjeto();
                     ?>
                 </div>
             </div>

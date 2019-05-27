@@ -1,0 +1,35 @@
+.container{
+    background-color:rgb(240,240,240);
+}
+.box1>img{
+    margin-top:4%;
+    width:80%;
+    height:80%;
+    margin-left:6%;
+}
+.box1,.box2,.box3{
+    width:33%;
+    float:left;
+}
+.box2,.box3{
+    margin-top:2%;
+}
+.box2>span{
+  padding:0% 0% 0% 15%;
+}
+.box2>span,.box3>span{
+    display:block;
+    margin-top:3.5%;
+    margin-bottom:3.5%;
+}
+.imgClose{
+    margin-top:4%;
+    margin-left:11%;
+    margin-bottom:4%;
+    width:5%;
+    height:5%;
+}
+.table{
+    margin-top:2%;
+    margin-left:1%;
+}

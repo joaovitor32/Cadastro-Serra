@@ -1,6 +1,5 @@
 <?php
 
-
     include("../Classes/Conexao.class.php");
     include("../Classes/Membro.class.php");
 

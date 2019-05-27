@@ -36,8 +36,8 @@
                     $DataIniMembro =$Projeto['DataIniMembro'];
                     $DataFimMembro=$Projeto['DataFimMembro'];
                     $Cargo=$Projeto['Cargo'];
-                    $DataIniProjeto=$Projeto['DataIni'];
-                    $DataFimProjeto=$Projeto['DataFim'];
+                    //$DataIniProjeto=$Projeto['DataIni'];
+                    //$DataFimProjeto=$Projeto['DataFim'];
                     $Nome=$Projeto['Nome'];
                     $Preco=$Projeto['Preco'];
                     $Descricao=$Projeto['Descricao'];
@@ -53,12 +53,10 @@
                     echo "<td> $DataFimProjeto</td>";
                     echo "<td>".utf8_encode($Descricao)."</td>";
                     echo "</tr>";
-
                 }
                 echo "</tbody>";
                 echo "</table>";
             }else{
-
                 echo "<tr>";
                 echo "<td colspan='9'><div class='tdNoneData'>Não há nenhum dado disponível</div></td>";
                 echo "</tr>";
@@ -67,14 +65,46 @@
             
             }
         }
+        public function VisualizarProjeto(){
+            $BD=new BancoDeDados();
+            $SQLSelect="SELECT * FROM Projeto";
+            $ConsultaProjeto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+
+            echo "<table id='myTable' class='Tabela'>";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>Nome: </th>";  
+            echo "<th>Visuzalizar ficha :</th>";    
+            echo "<th>Data de início: </th>";     
+            echo "<th>Data de finalização: </th>";
+            echo "<th>Preço: </th>";
+            echo "<th>Descrição: </th>";
+            echo "<th>Contratante: </th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            echo "<tr>";
+            while($Projeto=mysqli_fetch_object($ConsultaProjeto)){
+
+                echo "<td>".utf8_encode($Projeto->Nome)."</td>";            
+                echo "<td><a href='../Classes/DadosEspecificos/FolhaSistemaProjeto.php?Nome=$Projeto->Nome'  target='_blank'><img class='eyeProjeto' src='../Classes/DadosEspecificos/Img/eye.svg'></a></td>";
+                echo "<td>".date("d-m-Y",strtotime($Projeto->DataIni))."</td>";           
+                echo "<td>".date("d-m-Y",strtotime($Projeto->DataFim))."</td>";
+                echo "<td>".utf8_encode($Projeto->Preco)."</td>";
+                echo "<td>".utf8_encode($Projeto->Descricao)."</td>"; 
+                echo "<td>".utf8_encode($Projeto->Contratante)."</td>";    
+                echo "</tr>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+        }
         public function CadastrarProjeto($Membro1,$ProjetoNome,$DataIni,$DataFim,$Preco,$Descri,$Contratante){
             $BD=new BancoDeDados();
             $SQLSelect= [];
             $CodMembro=[];
-            $TamIt=0;
             $SQLInsertProjeto="INSERT INTO Projeto (Nome,DataIni,DataFim,Preco,Descricao,Contratante) VALUES('$ProjetoNome','$DataIni','$DataFim','$Preco','$Descri','$Contratante')";
             $conexao=$BD->ConectarBanco();
-            if(mysqli_query($conexao, $SQLInsertProjeto)){
+            if(mysqli_query($conexao,$SQLInsertProjeto)){
                 $CodeNewProject=$conexao->insert_id;
                 for($i=0;$i<count($Membro1);$i++){
                     $NomeMembro=$Membro1[$i];
@@ -84,11 +114,12 @@
                         $CodMembro[$i]=$Membro["CodMembro"];
                     }
                 }
+                mkdir('../FotosProjeto/'.$ProjetoNome, 0777);
             }else{
                 header("location: /Php/Sistema/SistemaGerencia/Cadastrar/ProjetoCadastrar.php?errocadastro=3");
             }
             $ProjetosMembro = new ProjetosMembro();
-            $ProjetosMembro->InsertMembroProjeto($CodeNewProject,$CodMembro,$TamIt);
+            $ProjetosMembro->InsertMembroProjeto($CodeNewProject,$CodMembro);
             $conexao->close();
         }
     }
