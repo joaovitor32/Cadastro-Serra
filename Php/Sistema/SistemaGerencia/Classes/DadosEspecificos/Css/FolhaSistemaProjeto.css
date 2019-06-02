@@ -1,7 +1,59 @@
+#boxPai{
+    margin-left:6%;
+}
 .nav-link{
     color:rgb(253,104,0);
 }
 .nav-link:hover{
     color:rgb(253,104,0);
 }
+.inputFoto{
+    margin-top:4%;
+}
+.labelFotos{
+    color: rgb(253,104,0);
+    margin-right:1%;
+}
+.inputFotoProjeto{
+    border:2px solid rgb(253,104,0);
+    outline: none;
+    border-radius:10px;
+    color:rgb(253,104,0);
+}
+#boxPai{
+    margin-left:10%;
+}
+input[type=file]::-webkit-file-upload-button {
+    visibility: hidden; 
+}
+input[type=file]{
+    font-size:1em;
+    border:1px solid rgb(253,104,0);
+    margin-left:0%;
+    outline:none;
+    cursor:pointer;
+    color:rgb(254,103,0);
+}
+.inputFotoSubmit{
+    display: block;
+    margin-top:3%;
+    margin-left:18%;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:1px solid rgb(253,104,0);
+    background-color:rgb(253,104,0);
+    margin-bottom:3%;
+}
+.iconAdd{
+    width:2.5%;
+    height:2.5%;
+    margin-left:1%;
+}
+/*---------------Cadastro de fotos-----------------*/
+.boxCardFoto{
 
+}
+.fotoImg{
+    
+}

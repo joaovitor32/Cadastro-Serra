@@ -9,7 +9,7 @@
     $Cargo=$_POST['cargo'];
     $Telefone=$_POST['telefone'];
     $CPF=$_POST['cpf'];
-    $Foto["foto"]=$_FILES["foto"];
+    $Foto['foto']=$_FILES['foto'];
     $Rua=$_POST['rua'];
     $Numero=$_POST['numero'];
     $Bairro=$_POST['bairro'];
@@ -25,7 +25,7 @@
         header("location: /Php/Sistema/SistemaGerencia/Cadastrar/MembroCadastrar.php?errocadastro=1");
     }else{
         $Membro=new Membro();
-        $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto["foto"]);
+        $Membro->CadastrarMembro($Nome,$Curso,$AnoEntrada,$Cargo,$Telefone,$CPF,$Rua,$Numero,$Bairro,$Email,$Aniversario,$Foto['foto']);
     }
     //header("location: /Php/Sistema/SistemaGerencia/Gerencia.php");
 

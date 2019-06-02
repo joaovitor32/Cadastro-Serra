@@ -13,7 +13,7 @@
     <!---Barra lateral-->
 <body>
     <?php
-        $NomeRed=$_GET['Nome'];
+        isset($_GET['NomeR']) ? $NomeRed=$_GET['NomeR']:$NomeRed=$_GET['Nome'];
         require('../Conexao.class.php');
         include("../Membro.class.php");
         include("../Acao.class.php");
@@ -34,7 +34,10 @@
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Membros no Projeto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Alterações</a>
+                            <a class="nav-link" id="Fotos-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Alterações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="Fotos-tab" data-toggle="tab" href="#Fotos" role="tab" aria-controls="contact" aria-selected="false">Fotos</a>
                         </li>
                         </ul>
                             <div class="tab-content" id="myTabContent">
@@ -47,12 +50,30 @@
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             
                             </div>
+                            <div class="tab-pane fade" id="Fotos" role="tabpanel" aria-labelledby="contact-tab">
+                                <form method="POST" enctype="multipart/form-data" action="FotoCadastrar.php" >
+                                    <input type="hidden" name="NomeProjeto" value= <?php echo $NomeRed; ?> />
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12 offset-md-2">
+                                                <div class="inputFoto" id="boxPai">
+                                                    <span><label class="labelFotos">Número de fotos a cadastrar:</label><input type="number" id="numfotos" class="inputFotoProjeto" required><a href=# onclick="addField();"><img class="iconAdd" src="Icon/add.svg"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <?php
+                                    $Projeto= new Projetos();
+                                    $Projeto->CardsFotoProjeto($NomeRed);
+                                ?>
+                            </div>
                         </div> 
                     </div>
                 </div>
             </div>
         </div>                 
     </section>
-    <script src="Js/FolhaSistema.js"></script>
+    <script src="Js/FolhaSistemaProjeto.js"></script>
 </body>
 </html>

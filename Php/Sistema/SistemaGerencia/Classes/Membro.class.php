@@ -70,7 +70,7 @@
                 $NewCode=$conexao->insert_id;
             }
             $conexao->close();
-            if($Foto["error"] == 0){
+            if($Foto['error'] == 0){
                 $arquivo_tmp=$Foto['tmp_name'];
                 $nome =$Foto['name'];
                 $extensao=pathinfo($nome,PATHINFO_EXTENSION);

@@ -87,7 +87,7 @@
             while($Projeto=mysqli_fetch_object($ConsultaProjeto)){
 
                 echo "<td>".utf8_encode($Projeto->Nome)."</td>";            
-                echo "<td><a href='../Classes/DadosEspecificos/FolhaSistemaProjeto.php?Nome=$Projeto->Nome'  target='_blank'><img class='eyeProjeto' src='../Classes/DadosEspecificos/Img/eye.svg'></a></td>";
+                echo "<td><a href='../Classes/DadosEspecificos/FolhaSistemaProjeto.php?Nome=$Projeto->Nome'  target='_blank'><div class='boxImg'><img class='eyeProjeto' src='../Classes/DadosEspecificos/Img/eye.svg'></div></a></td>";
                 echo "<td>".date("d-m-Y",strtotime($Projeto->DataIni))."</td>";           
                 echo "<td>".date("d-m-Y",strtotime($Projeto->DataFim))."</td>";
                 echo "<td>".utf8_encode($Projeto->Preco)."</td>";
@@ -121,6 +121,40 @@
             $ProjetosMembro = new ProjetosMembro();
             $ProjetosMembro->InsertMembroProjeto($CodeNewProject,$CodMembro);
             $conexao->close();
+        }
+        public function CadastrarFotosProjeto($Fotos,$NomeProjeto){
+            $Path="../../FotosProjeto/".$NomeProjeto."/";
+            $Diretorio=opendir($Path);
+            $NumProj=0;
+            while(readdir($Diretorio)){
+                $NumProj++;
+            }
+            closedir($Diretorio);
+            for($i=0;$i<count($Fotos);$i++){
+                if($Fotos["error"][$i] == 0){
+                    $arquivo_tmp=$Fotos['tmp_name'][$i];
+                    $nome =$Fotos['name'][$i];
+                    $extensao=pathinfo($nome,PATHINFO_EXTENSION);
+                    $extensao=strtolower($extensao);
+                    if(strstr('.jpg;.jpeg;.gif;.png',$extensao)){
+                        $NewName=($NumProj+$i-1).'.jpeg';
+                        $Destino=$Path.$NewName;
+                        @move_uploaded_file($arquivo_tmp,$Destino);                    
+                    }
+                }
+            }
+            header("location: /Php/Sistema/SistemaGerencia/Classes/DadosEspecificos/FolhaSistemaProjeto.php?NomeR=".$NomeProjeto);
+        }
+        public function CardsFotoProjeto($NomeProjeto){
+            $Path="../../FotosProjeto/".$NomeProjeto."/";
+            $Arquivos = glob("$Path{*.jpg,*.JPG,*.png,*.gif,*.bmp,*.jpeg}", GLOB_BRACE);
+            if(count($Arquivos)!=0){
+                for($i=0;$i<=count($Arquivos);$i++){
+                    echo "<div class='card boxCardFoto'>";
+                    echo "<img class='card-img fotoImg' src=".$Arquivos[$i].">";
+                    echo "</div>";
+                }
+            }
         }
     }
     class ProjetosMembro extends BancoDeDados{
